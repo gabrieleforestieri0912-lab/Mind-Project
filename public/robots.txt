@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mind-project.com
+
+# Sitemaps
+Sitemap: https://mind-project.com/sitemap.xml
