@@ -18,6 +18,10 @@ export default function ResetPassword() {
   useEffect(() => {
     // _initialize() auto-detects the recovery code and fires PASSWORD_RECOVERY
     const supabase = createClient();
+    if (!supabase) {
+      setError('Configurazione non disponibile. Riprova più tardi.');
+      return;
+    }
     supabase.auth.getSession().then(({ data }) => {
       if (!data.session) {
         setError('Link non valido o scaduto. Richiedi un nuovo recupero password.');
@@ -40,6 +44,11 @@ export default function ResetPassword() {
     setError('');
 
     const supabase = createClient();
+    if (!supabase) {
+      setError('Configurazione non disponibile. Riprova più tardi.');
+      setLoading(false);
+      return;
+    }
     const { error } = await supabase.auth.updateUser({ password });
 
     if (error) {

@@ -12,6 +12,10 @@ export default function AuthCallback() {
 
     const handleCallback = async () => {
       const supabase = createClient();
+      if (!supabase) {
+        setError('Configurazione non disponibile. Riprova più tardi.');
+        return;
+      }
 
       // _initialize() auto-handles PKCE code exchange + saves session.
       // getSession() awaits initializePromise then returns the session.

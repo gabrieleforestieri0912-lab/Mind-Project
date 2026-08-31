@@ -24,6 +24,11 @@ export function SupabaseAuthProvider({ children }: { children: React.ReactNode }
   const supabase = createClient();
 
   useEffect(() => {
+    if (!supabase) {
+      setIsLoading(false);
+      return;
+    }
+
     const syncUser = async () => {
       try {
         await fetch('/api/auth/sync', {
@@ -54,7 +59,7 @@ export function SupabaseAuthProvider({ children }: { children: React.ReactNode }
   }, []);
 
   const signOut = async () => {
-    await supabase.auth.signOut();
+    if (supabase) await supabase.auth.signOut();
     setSession(null);
     setUser(null);
   };

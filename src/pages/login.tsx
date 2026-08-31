@@ -31,6 +31,11 @@ export default function Login() {
     setGoogleLoading(true);
     setError('');
     const supabase = createClient();
+    if (!supabase) {
+      setError('Configurazione non disponibile. Riprova più tardi.');
+      setGoogleLoading(false);
+      return;
+    }
     const redirectTo = `${window.location.origin}/auth/callback`;
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -48,6 +53,11 @@ export default function Login() {
     setError('');
 
     const supabase = createClient();
+    if (!supabase) {
+      setError('Configurazione non disponibile. Riprova più tardi.');
+      setLoading(false);
+      return;
+    }
     const { error } = await supabase.auth.signInWithPassword({ email, password });
 
     if (error) {

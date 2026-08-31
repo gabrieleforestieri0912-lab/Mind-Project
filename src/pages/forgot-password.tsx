@@ -17,6 +17,11 @@ export default function ForgotPassword() {
     setError('');
 
     const supabase = createClient();
+    if (!supabase) {
+      setError('Configurazione non disponibile. Riprova più tardi.');
+      setLoading(false);
+      return;
+    }
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: `${window.location.origin}/reset-password`,
     });
