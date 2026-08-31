@@ -135,7 +135,7 @@ const navLinks = [
             className={`relative flex items-center justify-between px-3 sm:px-4 py-2 rounded-xl transition-all duration-500 ${
               scrolled
                 ? 'bg-[#050505]/80 backdrop-blur-2xl border border-white/[0.06] shadow-[0_4px_16px_rgba(0,0,0,0.4)]'
-                : 'bg-white/[0.02] backdrop-blur-md border border-white/[0.04]'
+                : 'bg-transparent border border-transparent'
             }`}
           >
             <Link href="/" className="flex items-center gap-2 group relative">
