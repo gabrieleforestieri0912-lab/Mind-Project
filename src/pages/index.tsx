@@ -121,7 +121,7 @@ function NewsletterForm() {
 export default function HomePage() {
   const faqJsonLd = {
     '@type': 'FAQPage',
-    '@id': 'https://mind-project.com/#faq',
+    '@id': 'https://mind-prjct.vercel.app/#faq',
     mainEntity: faqs.map((f) => ({
       '@type': 'Question',
       name: f.q,
@@ -139,13 +139,13 @@ export default function HomePage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://mind-project.com/',
+        item: 'https://mind-prjct.vercel.app/',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Percorsi',
-        item: 'https://mind-project.com/services',
+        item: 'https://mind-prjct.vercel.app/services',
       },
     ],
   };
@@ -158,7 +158,7 @@ export default function HomePage() {
     provider: {
       '@type': 'Organization',
       name: 'Mind Project',
-      sameAs: 'https://mind-project.com',
+      sameAs: 'https://mind-prjct.vercel.app',
     },
     hasCourseInstance: {
       '@type': 'CourseInstance',
@@ -170,7 +170,7 @@ export default function HomePage() {
         price: '27',
         priceCurrency: 'EUR',
         availability: 'https://schema.org/InStock',
-        url: 'https://mind-project.com/services/mind-project',
+        url: 'https://mind-prjct.vercel.app/services/mind-project',
       },
     },
   };
@@ -180,7 +180,7 @@ export default function HomePage() {
       <SEO
         title="Mind Project — Rivoluziona il tuo Mindset"
         description="Mind Project è il programma di coaching online di Gabriele Forestieri: supera le paure, elimina le dipendenze, sviluppa disciplina e raggiungi i tuoi obiettivi con un metodo basato su neuroscienze e abitudini atomiche."
-        canonicalUrl="https://mind-project.com/"
+        canonicalUrl="https://mind-prjct.vercel.app/"
         keywords={['mindset', 'crescita personale', 'coaching online', 'disciplina', 'obiettivi', 'mentalità', 'abitudini atomiche', 'Gabriele Forestieri']}
         jsonLd={[faqJsonLd, breadcrumbJsonLd, courseJsonLd]}
       />

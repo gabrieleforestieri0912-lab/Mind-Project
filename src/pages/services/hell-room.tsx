@@ -35,9 +35,9 @@ export default function HellRoom() {
   const breadcrumbJsonLd = {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-project.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-project.com/services' },
-      { '@type': 'ListItem', position: 3, name: 'Hell Room', item: 'https://mind-project.com/services/hell-room' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-prjct.vercel.app/' },
+      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-prjct.vercel.app/services' },
+      { '@type': 'ListItem', position: 3, name: 'Hell Room', item: 'https://mind-prjct.vercel.app/services/hell-room' },
     ],
   };
 
@@ -46,7 +46,7 @@ export default function HellRoom() {
       <SEO
         title="Hell Room - Mind Project"
         description="L'intensivo di 90 giorni di Mind Project per costruire una mentalità dura e impenetrabile. Iscrizioni attualmente chiuse."
-        canonicalUrl="https://mind-project.com/services/hell-room"
+        canonicalUrl="https://mind-prjct.vercel.app/services/hell-room"
         keywords={['hell room', 'mentalità dura', 'challenge 90 giorni', 'disciplina', 'mindset intenso']}
         noIndex
         jsonLd={[breadcrumbJsonLd]}

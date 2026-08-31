@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://mind-project.com',
+  siteUrl: process.env.SITE_URL || 'https://mind-prjct.vercel.app',
   generateRobotsTxt: true, // (optional)
   exclude: ['/api/*', '/settings', '/profile', '/login', '/signup', '/forgot-password', '/reset-password', '/onboarding', '/payment/*'],
   robotsTxtOptions: {
@@ -20,7 +20,7 @@ module.exports = {
       { userAgent: 'meta-externalagent', allow: ['/', '/llms.txt', '/llms-full.txt'] },
     ],
     additionalSitemaps: [
-      'https://mind-project.com/sitemap.xml',
+      'https://mind-prjct.vercel.app/sitemap.xml',
     ],
   },
 }

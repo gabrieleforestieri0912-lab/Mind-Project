@@ -151,7 +151,7 @@ export default function Profile() {
       <SEO
         title="Profilo"
         description="Il tuo profilo Mind Project. Monitora i tuoi progressi e gestisci il tuo account."
-        canonicalUrl="https://mind-project.com/profile"
+        canonicalUrl="https://mind-prjct.vercel.app/profile"
       />
       <main className="max-w-5xl mx-auto px-3 sm:px-4 py-14 sm:py-16 space-y-8 sm:space-y-12">
         <motion.section {...fadeInUp} className="text-center">

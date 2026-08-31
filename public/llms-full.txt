@@ -1,13 +1,13 @@
 # Mind Project — Sito completo
 
-Mind Project (https://mind-project.com) è il programma di coaching online e crescita personale fondato da Gabriele Forestieri, performance coach. Il sito è interamente in italiano.
+Mind Project (https://mind-prjct.vercel.app) è il programma di coaching online e crescita personale fondato da Gabriele Forestieri, performance coach. Il sito è interamente in italiano.
 
 ## Informazioni sull'azienda / persona
 
 - Nome: Mind Project
 - Fondatore e coach: Gabriele Forestieri
 - Email di contatto: gabriele.forestieri0912@gmail.com
-- URL: https://mind-project.com
+- URL: https://mind-prjct.vercel.app
 - Tipo di attività: coaching online, programmi di mindset e crescita personale, ottimizzazione aziendale (Business Protocol)
 - Pagamenti: Stripe, transazioni sicure e crittografate
 - Lingua: italiano (it_IT)
@@ -28,23 +28,23 @@ Il percorso prevede 4 fasi: Diagnosi (analisi dello stato attuale), Reset (elimi
 - Prezzo: 27€/mese oppure 297€/anno (risparmia il 10%)
 - Include: videochiamata settimanale di gruppo, gruppo privato, video corso sulla mentalità
 - Caratteristiche: eliminazione delle dipendenze, implementazione di buone abitudini, superamento delle paure e delle insicurezze, allineamento delle azioni allo scopo, raggiungimento degli obiettivi
-- Pagina: https://mind-project.com/services/mind-project
+- Pagina: https://mind-prjct.vercel.app/services/mind-project
 
 ### 2. Mind Project VIP (esperienza esclusiva)
 - Prezzo: 197€/3 mesi, 397€/6 mesi, 697€/anno
 - Include: 2 videochiamate 1-a-1 con il coach, 3 videochiamate di gruppo a settimana, supporto completo, live esclusiva, supporto 24/7, SOS CALL in caso di emergenza
 - Bonus: accesso a tutte le chiamate registrate, accesso a tutti i corsi di Mind Project
-- Pagina: https://mind-project.com/services/mind-project-vip
+- Pagina: https://mind-prjct.vercel.app/services/mind-project-vip
 
 ### 3. Business Protocol (per aziende)
 - Prezzo: 29€/mese (Standard) oppure 59€/mese (Advanced, consigliato)
 - Include: ottimizzazione dei processi aziendali, scalabilità e incremento fatturato, sistemi di controllo e sicurezza, consulenza strategica direzionale
 - Advanced: implementazione completa, supporto priority live (24h), audit mensile personalizzato, accesso al network esclusivo
-- Pagina: https://mind-project.com/services/business-protocol
+- Pagina: https://mind-prjct.vercel.app/services/business-protocol
 
 ## Sfida 30 Giorni
 
-Sfida gratuita di 30 giorni disponibile per gli utenti registrati per costruire e consolidare abitudini vincenti, con tracciamento giornaliero del progresso. Pagina: https://mind-project.com/habit/challenge
+Sfida gratuita di 30 giorni disponibile per gli utenti registrati per costruire e consolidare abitudini vincenti, con tracciamento giornaliero del progresso. Pagina: https://mind-prjct.vercel.app/habit/challenge
 
 ## Video corso e chiamate registrate
 
@@ -78,18 +78,18 @@ No, il programma è progettato per funzionare a qualsiasi livello. I contenuti g
 
 ## Pagine del sito
 
-- Homepage: https://mind-project.com/
-- Percorsi (overview): https://mind-project.com/services
-- Mind Project Base: https://mind-project.com/services/mind-project
-- Mind Project VIP: https://mind-project.com/services/mind-project-vip
-- Business Protocol: https://mind-project.com/services/business-protocol
-- Sfida 30 Giorni: https://mind-project.com/habit/challenge
-- Chiamate Registrate: https://mind-project.com/mind-project/chiamate
-- Video corso (area riservata): https://mind-project.com/academy/mind-project
-- Contatti: https://mind-project.com/contacts
-- Privacy Policy: https://mind-project.com/privacy-policy
-- Termini di Servizio: https://mind-project.com/terms-of-service
+- Homepage: https://mind-prjct.vercel.app/
+- Percorsi (overview): https://mind-prjct.vercel.app/services
+- Mind Project Base: https://mind-prjct.vercel.app/services/mind-project
+- Mind Project VIP: https://mind-prjct.vercel.app/services/mind-project-vip
+- Business Protocol: https://mind-prjct.vercel.app/services/business-protocol
+- Sfida 30 Giorni: https://mind-prjct.vercel.app/habit/challenge
+- Chiamate Registrate: https://mind-prjct.vercel.app/mind-project/chiamate
+- Video corso (area riservata): https://mind-prjct.vercel.app/academy/mind-project
+- Contatti: https://mind-prjct.vercel.app/contacts
+- Privacy Policy: https://mind-prjct.vercel.app/privacy-policy
+- Termini di Servizio: https://mind-prjct.vercel.app/terms-of-service
 
 ## Contatti
 
-Per domande sui programmi di coaching, sui pagamenti o sul supporto: gabriele.forestieri0912@gmail.com oppure https://mind-project.com/contacts. Risposta entro 24 ore.
+Per domande sui programmi di coaching, sui pagamenti o sul supporto: gabriele.forestieri0912@gmail.com oppure https://mind-prjct.vercel.app/contacts. Risposta entro 24 ore.

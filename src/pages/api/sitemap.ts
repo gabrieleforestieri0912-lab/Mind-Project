@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const BASE_URL = 'https://mind-project.com';
+const BASE_URL = 'https://mind-prjct.vercel.app';
 
 const pages = [
   { url: '/', priority: '1.0', changefreq: 'weekly' },

@@ -41,7 +41,7 @@ export default function ForgotPassword() {
       <SEO
         title="Password Dimenticata"
         description="Recupera la password del tuo account Mind Project."
-        canonicalUrl="https://mind-project.com/forgot-password"
+        canonicalUrl="https://mind-prjct.vercel.app/forgot-password"
       />
       <main className="min-h-screen grid lg:grid-cols-2">
         <div className="hidden lg:flex relative bg-[#080808] items-start justify-center pt-0 pb-8 px-8 overflow-hidden">

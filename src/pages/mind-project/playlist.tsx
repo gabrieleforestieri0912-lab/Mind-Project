@@ -57,7 +57,7 @@ export default function PlaylistPage() {
       <SEO
         title="Videochiamate Registrate - Mind Project"
         description="Playlist esclusiva delle videochiamate registrate del programma Mind Project. Approfondimenti, Q&A e strategie di performance."
-        canonicalUrl="https://mind-project.com/mind-project/playlist"
+        canonicalUrl="https://mind-prjct.vercel.app/mind-project/playlist"
         keywords={['videochiamate registrate', 'mind project playlist', 'coaching mentale', 'registrazioni']}
       />
 

@@ -81,7 +81,7 @@ export default function Login() {
       <SEO
         title="Accedi"
         description="Accedi al tuo account Mind Project per riprendere il tuo allenamento."
-        canonicalUrl="https://mind-project.com/login"
+        canonicalUrl="https://mind-prjct.vercel.app/login"
         noIndex
       />
       <main className="min-h-screen grid lg:grid-cols-2">

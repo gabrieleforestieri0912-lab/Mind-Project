@@ -59,16 +59,16 @@ const plans = [
 export default function BusinessProtocol() {
   const productJsonLd = {
     '@type': 'Service',
-    '@id': 'https://mind-project.com/services/business-protocol#service',
+    '@id': 'https://mind-prjct.vercel.app/services/business-protocol#service',
     name: 'Business Protocol — Monetizza la tua Passione',
     description:
       'Monetizza la tua passione attraverso il Personal Brand e scappa dal sistema. Blueprint per recuperare il tuo investimento entro 90 giorni.',
-    image: 'https://mind-project.com/assets/business-protocol.png',
+    image: 'https://mind-prjct.vercel.app/assets/business-protocol.png',
     serviceType: 'Personal Brand Coaching',
     provider: {
       '@type': 'Organization',
       name: 'Mind Project',
-      url: 'https://mind-project.com',
+      url: 'https://mind-prjct.vercel.app',
     },
     areaServed: { '@type': 'Country', name: 'Italy' },
     offers: [
@@ -79,7 +79,7 @@ export default function BusinessProtocol() {
         priceCurrency: 'EUR',
         priceValidUntil: '2026-12-31',
         availability: 'https://schema.org/InStock',
-        url: 'https://mind-project.com/services/business-protocol',
+        url: 'https://mind-prjct.vercel.app/services/business-protocol',
       },
       {
         '@type': 'Offer',
@@ -88,7 +88,7 @@ export default function BusinessProtocol() {
         priceCurrency: 'EUR',
         priceValidUntil: '2026-12-31',
         availability: 'https://schema.org/InStock',
-        url: 'https://mind-project.com/services/business-protocol',
+        url: 'https://mind-prjct.vercel.app/services/business-protocol',
       },
     ],
   };
@@ -96,9 +96,9 @@ export default function BusinessProtocol() {
   const breadcrumbJsonLd = {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-project.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-project.com/services' },
-      { '@type': 'ListItem', position: 3, name: 'Business Protocol', item: 'https://mind-project.com/services/business-protocol' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-prjct.vercel.app/' },
+      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-prjct.vercel.app/services' },
+      { '@type': 'ListItem', position: 3, name: 'Business Protocol', item: 'https://mind-prjct.vercel.app/services/business-protocol' },
     ],
   };
 
@@ -107,7 +107,7 @@ export default function BusinessProtocol() {
       <SEO
         title="Business Protocol - Monetizza la tua Passione"
         description="Monetizza la tua passione attraverso il Personal Brand e scappa dal sistema. Blueprint per recuperare il tuo investimento entro 90 giorni. A partire da 497€/6 mesi."
-        canonicalUrl="https://mind-project.com/services/business-protocol"
+        canonicalUrl="https://mind-prjct.vercel.app/services/business-protocol"
         keywords={['business protocol', 'personal brand', 'monetizzare la passione', 'business online', 'community whatsapp']}
         jsonLd={[productJsonLd, breadcrumbJsonLd]}
       />

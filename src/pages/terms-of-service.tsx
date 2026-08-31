@@ -6,7 +6,7 @@ export default function TermsOfService() {
       <SEO
         title="Termini di Servizio"
         description="Termini di Servizio di Mind Project. Condizioni d'uso della piattaforma."
-        canonicalUrl="https://mind-project.com/terms-of-service"
+        canonicalUrl="https://mind-prjct.vercel.app/terms-of-service"
       />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="text-center mb-10 sm:mb-12">

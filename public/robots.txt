@@ -59,7 +59,7 @@ Allow: /llms.txt
 Allow: /llms-full.txt
 
 # Host
-Host: https://mind-project.com
+Host: https://mind-prjct.vercel.app
 
 # Sitemaps
-Sitemap: https://mind-project.com/sitemap.xml
+Sitemap: https://mind-prjct.vercel.app/sitemap.xml

@@ -114,7 +114,7 @@ export default function Signup() {
       <SEO
         title="Registrati"
         description="Crea il tuo account Mind Project e inizia il tuo percorso di trasformazione."
-        canonicalUrl="https://mind-project.com/signup"
+        canonicalUrl="https://mind-prjct.vercel.app/signup"
       />
       <main className="min-h-screen grid lg:grid-cols-2">
         <div className="hidden lg:flex relative bg-[#080808] items-start justify-center pt-0 pb-8 px-8 overflow-hidden">

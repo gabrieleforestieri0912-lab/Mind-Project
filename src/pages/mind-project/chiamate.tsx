@@ -131,7 +131,7 @@ export default function ChiamateRegistrate() {
       <SEO
         title="Chiamate Registrate — Mind Project"
         description="Playlist completa delle chiamate registrate del percorso Mind Project. Guarda le sessioni di coaching on-demand."
-        canonicalUrl="https://mind-project.com/mind-project/chiamate"
+        canonicalUrl="https://mind-prjct.vercel.app/mind-project/chiamate"
       />
 
       <main className="min-h-screen bg-[#050505] relative">

@@ -60,11 +60,11 @@ const plans = [
 export default function MindProjectVip() {
   const productJsonLd = {
     '@type': 'Product',
-    '@id': 'https://mind-project.com/services/mind-project-vip#product',
+    '@id': 'https://mind-prjct.vercel.app/services/mind-project-vip#product',
     name: 'Mind Project VIP — Coaching 1-a-1 Esclusivo',
     description:
       "Accesso totale al programma Mind Project con coaching individuale, supporto 24/7, live esclusive e SOS CALL per risultati straordinari senza compromessi.",
-    image: 'https://mind-project.com/assets/mind-project-vip.png',
+    image: 'https://mind-prjct.vercel.app/assets/mind-project-vip.png',
     brand: {
       '@type': 'Brand',
       name: 'Mind Project',
@@ -72,7 +72,7 @@ export default function MindProjectVip() {
     provider: {
       '@type': 'Organization',
       name: 'Mind Project',
-      url: 'https://mind-project.com',
+      url: 'https://mind-prjct.vercel.app',
     },
     offers: [
       {
@@ -82,7 +82,7 @@ export default function MindProjectVip() {
         priceCurrency: 'EUR',
         priceValidUntil: '2026-12-31',
         availability: 'https://schema.org/InStock',
-        url: 'https://mind-project.com/services/mind-project-vip',
+        url: 'https://mind-prjct.vercel.app/services/mind-project-vip',
       },
       {
         '@type': 'Offer',
@@ -91,7 +91,7 @@ export default function MindProjectVip() {
         priceCurrency: 'EUR',
         priceValidUntil: '2026-12-31',
         availability: 'https://schema.org/InStock',
-        url: 'https://mind-project.com/services/mind-project-vip',
+        url: 'https://mind-prjct.vercel.app/services/mind-project-vip',
       },
       {
         '@type': 'Offer',
@@ -100,7 +100,7 @@ export default function MindProjectVip() {
         priceCurrency: 'EUR',
         priceValidUntil: '2026-12-31',
         availability: 'https://schema.org/InStock',
-        url: 'https://mind-project.com/services/mind-project-vip',
+        url: 'https://mind-prjct.vercel.app/services/mind-project-vip',
       },
     ],
   };
@@ -108,9 +108,9 @@ export default function MindProjectVip() {
   const breadcrumbJsonLd = {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-project.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-project.com/services' },
-      { '@type': 'ListItem', position: 3, name: 'Mind Project VIP', item: 'https://mind-project.com/services/mind-project-vip' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-prjct.vercel.app/' },
+      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-prjct.vercel.app/services' },
+      { '@type': 'ListItem', position: 3, name: 'Mind Project VIP', item: 'https://mind-prjct.vercel.app/services/mind-project-vip' },
     ],
   };
 
@@ -119,7 +119,7 @@ export default function MindProjectVip() {
       <SEO
         title="Mind Project VIP - L'Elite del Mindset"
         description="Accesso esclusivo al programma Mind Project con coaching 1-a-1, supporto 24/7, live esclusive e SOS CALL. Il livello definitivo di Mind Project, a partire da 197€/3 mesi."
-        canonicalUrl="https://mind-project.com/services/mind-project-vip"
+        canonicalUrl="https://mind-prjct.vercel.app/services/mind-project-vip"
         keywords={['Mind Project VIP', 'coaching 1 a 1', 'coaching privato', 'supporto 24/7', 'mindset esclusivo', 'programma elite']}
         jsonLd={[productJsonLd, breadcrumbJsonLd]}
       />

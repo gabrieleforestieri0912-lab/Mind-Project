@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
       <SEO
         title="Privacy Policy"
         description="Privacy Policy di Mind Project. Come gestiamo e proteggiamo i tuoi dati personali."
-        canonicalUrl="https://mind-project.com/privacy-policy"
+        canonicalUrl="https://mind-prjct.vercel.app/privacy-policy"
       />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="text-center mb-10 sm:mb-12">

@@ -23,25 +23,25 @@ Diventa la Persona che Ammiri — Mind Project, coaching online e mindset
 
 ## Summary
 
-Mind Project (mind-project.com) è il programma di coaching online e mindset di Gabriele Forestieri. Il sito propone percorsi strutturati di crescita personale — Mind Project, Mind Project VIP e Business Protocol — basati su un metodo testato che integra neuroscienze, psicologia comportamentale e abitudini atomiche. Gli utenti accedono a video lezioni on-demand, chiamate di gruppo settimanali, esercizi pratici e una community esclusiva. È prevista una sfida gratuita di 30 giorni ("Sfida 30") per costruire abitudini. I piani sono venduti in abbonamento mensile o annuale con pagamenti sicuri via Stripe, con cancellazione in qualsiasi momento.
+Mind Project (mind-prjct.vercel.app) è il programma di coaching online e mindset di Gabriele Forestieri. Il sito propone percorsi strutturati di crescita personale — Mind Project, Mind Project VIP e Business Protocol — basati su un metodo testato che integra neuroscienze, psicologia comportamentale e abitudini atomiche. Gli utenti accedono a video lezioni on-demand, chiamate di gruppo settimanali, esercizi pratici e una community esclusiva. È prevista una sfida gratuita di 30 giorni ("Sfida 30") per costruire abitudini. I piani sono venduti in abbonamento mensile o annuale con pagamenti sicuri via Stripe, con cancellazione in qualsiasi momento.
 
 ## Contact
 
 - Email: gabriele.forestieri0912@gmail.com
-- Pagina contatti: https://mind-project.com/contacts
+- Pagina contatti: https://mind-prjct.vercel.app/contacts
 
 ## Links
 
-- [Homepage](https://mind-project.com/): Panoramica del programma, metodo e percorsi.
-- [Percorsi](https://mind-project.com/services): I tre percorsi Mind Project, Mind Project VIP e Business Protocol.
-- [Mind Project Base](https://mind-project.com/services/mind-project): Percorso base a partire da 27€/mese.
-- [Mind Project VIP](https://mind-project.com/services/mind-project-vip): Coaching 1-a-1, supporto 24/7, a partire da 197€/3 mesi.
-- [Business Protocol](https://mind-project.com/services/business-protocol): Ottimizzazione aziendale, a partire da 29€/mese.
-- [Sfida 30 Giorni](https://mind-project.com/habit/challenge): Sfida gratuita di 30 giorni per costruire abitudini.
-- [Chiamate Registrate](https://mind-project.com/mind-project/chiamate): Playlist delle sessioni di coaching registrate.
-- [Contatti](https://mind-project.com/contacts): Per domande sui programmi, risposta entro 24 ore.
-- [FAQ](https://mind-project.com/#faq): Domande frequenti sul programma e sui pagamenti.
+- [Homepage](https://mind-prjct.vercel.app/): Panoramica del programma, metodo e percorsi.
+- [Percorsi](https://mind-prjct.vercel.app/services): I tre percorsi Mind Project, Mind Project VIP e Business Protocol.
+- [Mind Project Base](https://mind-prjct.vercel.app/services/mind-project): Percorso base a partire da 27€/mese.
+- [Mind Project VIP](https://mind-prjct.vercel.app/services/mind-project-vip): Coaching 1-a-1, supporto 24/7, a partire da 197€/3 mesi.
+- [Business Protocol](https://mind-prjct.vercel.app/services/business-protocol): Ottimizzazione aziendale, a partire da 29€/mese.
+- [Sfida 30 Giorni](https://mind-prjct.vercel.app/habit/challenge): Sfida gratuita di 30 giorni per costruire abitudini.
+- [Chiamate Registrate](https://mind-prjct.vercel.app/mind-project/chiamate): Playlist delle sessioni di coaching registrate.
+- [Contatti](https://mind-prjct.vercel.app/contacts): Per domande sui programmi, risposta entro 24 ore.
+- [FAQ](https://mind-prjct.vercel.app/#faq): Domande frequenti sul programma e sui pagamenti.
 
 ## Full text
 
-Per il contenuto completo del sito in formato testo, consulta [llms-full.txt](https://mind-project.com/llms-full.txt).
+Per il contenuto completo del sito in formato testo, consulta [llms-full.txt](https://mind-prjct.vercel.app/llms-full.txt).

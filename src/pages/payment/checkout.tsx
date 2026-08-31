@@ -58,7 +58,7 @@ export default function CheckoutPage() {
       <SEO
         title="Checkout"
         description="Completa il tuo acquisto in modo sicuro tramite Stripe."
-        canonicalUrl="https://mind-project.com/payment/checkout"
+        canonicalUrl="https://mind-prjct.vercel.app/payment/checkout"
       />
       <main className="max-w-7xl mx-auto px-3 sm:px-4 py-14 sm:py-16 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 items-start">
         <div>

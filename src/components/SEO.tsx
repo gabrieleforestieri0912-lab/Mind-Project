@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-export const SITE_URL = 'https://mind-project.com';
+export const SITE_URL = 'https://mind-prjct.vercel.app';
 export const SITE_NAME = 'Mind Project';
 export const AUTHOR_NAME = 'Gabriele Forestieri';
 export const CONTACT_EMAIL = 'gabriele.forestieri0912@gmail.com';

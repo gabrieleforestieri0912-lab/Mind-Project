@@ -49,11 +49,11 @@ const plans = [
 export default function MindProjectBase() {
   const productJsonLd = {
     '@type': 'Product',
-    '@id': 'https://mind-project.com/services/mind-project#product',
+    '@id': 'https://mind-prjct.vercel.app/services/mind-project#product',
     name: 'Mind Project — Percorso Base di Mindset',
     description:
       'Programma di coaching online per rivoluzionare il mindset, superare le paure e raggiungere gli obiettivi con il supporto della community.',
-    image: 'https://mind-project.com/assets/mind-project.png',
+    image: 'https://mind-prjct.vercel.app/assets/mind-project.png',
     brand: {
       '@type': 'Brand',
       name: 'Mind Project',
@@ -61,7 +61,7 @@ export default function MindProjectBase() {
     provider: {
       '@type': 'Organization',
       name: 'Mind Project',
-      url: 'https://mind-project.com',
+      url: 'https://mind-prjct.vercel.app',
     },
     offers: [
       {
@@ -71,7 +71,7 @@ export default function MindProjectBase() {
         priceCurrency: 'EUR',
         priceValidUntil: '2026-12-31',
         availability: 'https://schema.org/InStock',
-        url: 'https://mind-project.com/services/mind-project',
+        url: 'https://mind-prjct.vercel.app/services/mind-project',
       },
     ],
   };
@@ -79,9 +79,9 @@ export default function MindProjectBase() {
   const breadcrumbJsonLd = {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-project.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-project.com/services' },
-      { '@type': 'ListItem', position: 3, name: 'Mind Project Base', item: 'https://mind-project.com/services/mind-project' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-prjct.vercel.app/' },
+      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-prjct.vercel.app/services' },
+      { '@type': 'ListItem', position: 3, name: 'Mind Project Base', item: 'https://mind-prjct.vercel.app/services/mind-project' },
     ],
   };
 
@@ -90,7 +90,7 @@ export default function MindProjectBase() {
       <SEO
         title="Mind Project Base - Rivoluziona il tuo Mindset"
         description="Il percorso base di Mind Project: videochiamate settimanali di gruppo, community esclusiva e un metodo testato per eliminare le dipendenze, superare le paure e raggiungere i tuoi obiettivi. A partire da 37€/mese."
-        canonicalUrl="https://mind-project.com/services/mind-project"
+        canonicalUrl="https://mind-prjct.vercel.app/services/mind-project"
         keywords={['Mind Project base', 'percorso mindset', 'coaching online', 'crescita personale', 'community esclusiva', 'eliminare dipendenze']}
         jsonLd={[productJsonLd, breadcrumbJsonLd]}
       />

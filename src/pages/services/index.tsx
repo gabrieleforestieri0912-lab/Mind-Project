@@ -78,8 +78,8 @@ export default function ServicesOverview() {
   const breadcrumbJsonLd = {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-project.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-project.com/services' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-prjct.vercel.app/' },
+      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-prjct.vercel.app/services' },
     ],
   };
 
@@ -88,7 +88,7 @@ export default function ServicesOverview() {
       <SEO
         title="I Nostri Percorsi - Mind Project"
         description="Scopri i percorsi di Mind Project: Mind Project Base, Mind Project VIP con coaching 1-a-1 e Business Protocol per aziende. Scegli il piano giusto per raggiungere i tuoi obiettivi."
-        canonicalUrl="https://mind-project.com/services"
+        canonicalUrl="https://mind-prjct.vercel.app/services"
         keywords={['percorsi coaching', 'Mind Project base', 'Mind Project VIP', 'Business Protocol', 'coaching online']}
         jsonLd={[breadcrumbJsonLd]}
       />

@@ -64,7 +64,7 @@ export default function ResetPassword() {
 
   return (
     <>
-      <SEO title="Reimposta Password" description="Reimposta la password del tuo account Mind Project." canonicalUrl="https://mind-project.com/reset-password" />
+      <SEO title="Reimposta Password" description="Reimposta la password del tuo account Mind Project." canonicalUrl="https://mind-prjct.vercel.app/reset-password" />
       <main className="min-h-screen flex items-center justify-center bg-[#050505] px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

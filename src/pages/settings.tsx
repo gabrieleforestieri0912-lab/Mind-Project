@@ -74,7 +74,7 @@ export default function Settings() {
       <SEO
         title="Impostazioni"
         description="Gestisci le impostazioni del tuo profilo Mind Project."
-        canonicalUrl="https://mind-project.com/settings"
+        canonicalUrl="https://mind-prjct.vercel.app/settings"
       />
       <main className="max-w-4xl mx-auto px-3 sm:px-4 py-14 sm:py-16">
         <span className="category-tag">Configurazione</span>
