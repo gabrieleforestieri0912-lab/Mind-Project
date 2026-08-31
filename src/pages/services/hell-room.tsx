@@ -8,7 +8,7 @@ const features = [
   { icon: Flame, text: 'Challenge dei 90 giorni per nuove abitudini' },
   { icon: ShieldCheck, text: 'Mentalità dura e impenetrabile in 90 giorni' },
   { icon: Lock, text: 'Controllo giornaliero sul gruppo esclusivo' },
-  { icon: CheckCircle2, text: 'Elimina ogni vizio e supera il 99% delle persone' },
+  { icon: CheckCircle2, text: 'Elimina ogni vizio e costruisci una disciplina incrollabile' },
 ];
 
 const pathFeatures = [
@@ -18,7 +18,7 @@ const pathFeatures = [
   "Challenge dei 90 giorni per instaurare le nuove abitudini che ti servono per cambiare la tua vita",
   "Controllo giornaliero sul gruppo esclusivo per verificare che tu non fallisca in nulla",
   "Ti aiuto a costruire una mentalità dura e impenetrabile in 90 giorni per sbloccare qualsiasi risultato desideri",
-  "Elimina ogni tipo di vizio e supera il 99% delle persone",
+  "Elimina ogni tipo di vizio e costruisci una disciplina incrollabile",
   "Sblocca tutti i tuoi obiettivi e smettila di procrastinare con la tua nuova mentalità",
 ];
 

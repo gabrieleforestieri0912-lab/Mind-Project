@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ChevronRight, Target, Star, Briefcase, CheckCircle2, Shield, ArrowDown, Quote, ArrowRight, Flame, Brain, Zap, Heart, BookOpen, GraduationCap } from 'lucide-react';
+import { ChevronRight, Target, Star, Briefcase, CheckCircle2, Shield, ArrowDown, Quote, ArrowRight, Flame, Brain, Zap, BookOpen, GraduationCap } from 'lucide-react';
 import React, { useState } from 'react';
 import SEO from '@/components/SEO';
 
@@ -167,7 +167,7 @@ export default function HomePage() {
       inLanguage: 'it-IT',
       offers: {
         '@type': 'Offer',
-        price: '27',
+        price: '37',
         priceCurrency: 'EUR',
         availability: 'https://schema.org/InStock',
         url: 'https://mind-prjct.vercel.app/services/mind-project',
@@ -253,23 +253,16 @@ export default function HomePage() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
-                  className="flex flex-wrap items-center gap-6 sm:gap-8 mt-10 sm:mt-12"
+                  className="mt-10 sm:mt-12 inline-flex flex-wrap items-center gap-2 sm:gap-4"
                 >
-                  <div className="flex -space-x-3">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div
-                        key={i}
-                        className="w-9 h-9 rounded-full border-2 border-[#050505] bg-gradient-to-br from-gray-700 to-gray-900"
-                      />
-                    ))}
-                    <div className="w-9 h-9 rounded-full border-2 border-[#050505] bg-accent-primary flex items-center justify-center">
-                      <span className="text-[10px] font-black text-black">+500</span>
-                    </div>
-                  </div>
-                  <div>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">+500 Atleti</p>
-                  <p className="text-[8px] sm:text-[10px] text-gray-600">hanno già iniziato il percorso</p>
-                  </div>
+                  {['Neuroscienze', 'Psicologia Comportamentale', 'Abitudini Atomiche'].map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-gray-500"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </motion.div>
               </div>
 
@@ -446,12 +439,11 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto"
+              className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto"
             >
               {[
                 { value: '3+', label: 'Anni di Ricerca', icon: BookOpen },
-                { value: '500+', label: 'Atleti Trasformati', icon: Heart },
-                { value: '1', label: 'Metodo Testato', icon: GraduationCap },
+                { value: '1', label: 'Metodo Strutturato', icon: GraduationCap },
                 { value: '100%', label: 'Dedicato a Te', icon: Target },
               ].map((stat, i) => {
                 const Icon = stat.icon;
