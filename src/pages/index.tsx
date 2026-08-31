@@ -1,9 +1,9 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ChevronRight, Target, Star, Briefcase, CheckCircle2, Shield, ArrowDown, Quote, ArrowRight, Flame, Brain, Zap, Heart, BookOpen, GraduationCap } from 'lucide-react';
 import React, { useState } from 'react';
+import SEO from '@/components/SEO';
 
 const services = [
   {
@@ -31,8 +31,8 @@ const services = [
   {
     id: 'business-protocol',
     name: 'Business Protocol',
-    tagline: 'Per Aziende',
-    desc: 'Soluzioni per ottimizzare i processi aziendali, scalare il business e dominare il mercato.',
+    tagline: 'Personal Brand',
+    desc: 'Monetizza la tua passione attraverso il Personal Brand e scappa dal sistema.',
     href: '/services/business-protocol',
     icon: Briefcase,
     gradient: 'from-emerald-500 to-teal-400',
@@ -119,13 +119,71 @@ function NewsletterForm() {
 }
 
 export default function HomePage() {
+  const faqJsonLd = {
+    '@type': 'FAQPage',
+    '@id': 'https://mind-project.com/#faq',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a,
+      },
+    })),
+  };
+
+  const breadcrumbJsonLd = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://mind-project.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Percorsi',
+        item: 'https://mind-project.com/services',
+      },
+    ],
+  };
+
+  const courseJsonLd = {
+    '@type': 'Course',
+    name: 'Mind Project — Programma di Mindset e Crescita Personale',
+    description:
+      'Programma di coaching online per superare le paure, eliminare le dipendenze, implementare abitudini vincenti e raggiungere i propri obiettivi.',
+    provider: {
+      '@type': 'Organization',
+      name: 'Mind Project',
+      sameAs: 'https://mind-project.com',
+    },
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'online',
+      courseWorkload: 'PT3H',
+      inLanguage: 'it-IT',
+      offers: {
+        '@type': 'Offer',
+        price: '27',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        url: 'https://mind-project.com/services/mind-project',
+      },
+    },
+  };
+
   return (
     <>
-      <Head>
-        <title>Mind Project — Rivoluziona il tuo Mindset</title>
-        <meta name="description" content="Mind Project è il programma di crescita personale che ti aiuta a superare le paure, sviluppare disciplina e raggiungere i tuoi obiettivi." />
-        <meta name="keywords" content="mindset, crescita personale, coaching, disciplina, obiettivi, mentalità" />
-      </Head>
+      <SEO
+        title="Mind Project — Rivoluziona il tuo Mindset"
+        description="Mind Project è il programma di coaching online di Gabriele Forestieri: supera le paure, elimina le dipendenze, sviluppa disciplina e raggiungi i tuoi obiettivi con un metodo basato su neuroscienze e abitudini atomiche."
+        canonicalUrl="https://mind-project.com/"
+        keywords={['mindset', 'crescita personale', 'coaching online', 'disciplina', 'obiettivi', 'mentalità', 'abitudini atomiche', 'Gabriele Forestieri']}
+        jsonLd={[faqJsonLd, breadcrumbJsonLd, courseJsonLd]}
+      />
 
       <main className="bg-[#050505] text-white">
         {/* Hero */}
@@ -223,7 +281,7 @@ export default function HomePage() {
               >
                 <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-3xl overflow-hidden border border-white/[0.06] shadow-2xl">
                   <Image
-                    src="/assets/Image/mind-project.png"
+                    src="/assets/mind-project.png"
                     alt="Gabriele Forestieri — Mind Project"
                     fill
                     sizes="(max-width: 1024px) 0vw, 40vw"
@@ -329,7 +387,7 @@ export default function HomePage() {
               >
                 <div className="relative aspect-[4/5] max-w-sm mx-auto lg:mx-0 w-full rounded-3xl overflow-hidden border border-white/[0.06] shadow-2xl">
                   <Image
-                    src="/assets/Image/mind-project.png"
+                    src="/assets/mind-project.png"
                     alt="Gabriele Forestieri — Fondatore Mind Project"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"

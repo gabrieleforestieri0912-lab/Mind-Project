@@ -1,0 +1,47 @@
+# Mind Project
+
+> Mind Project è il programma di coaching online e crescita personale di Gabriele Forestieri, performance coach. Un metodo strutturato basato su neuroscienze e psicologia comportamentale per superare le paure, eliminare le dipendenze, implementare abitudini vincenti e raggiungere gli obiettivi: mentalità, disciplina e performance mentale.
+
+## H1
+
+Diventa la Persona che Ammiri — Mind Project, coaching online e mindset
+
+## Key Points
+
+- Mind Project è un programma di crescita personale e coaching online fondato da Gabriele Forestieri.
+- Il metodo combina neuroscienze, psicologia comportamentale, habit stacking e cognitive reframing.
+- Offre tre percorsi: Mind Project (percorso base), Mind Project VIP (coaching 1-a-1 e supporto 24/7) e Business Protocol (ottimizzazione aziendale).
+- Il programma include video lezioni on-demand, chiamate settimanali di gruppo, esercizi pratici e una community esclusiva.
+- I pagamenti sono processati in modo sicuro tramite Stripe.
+- Il percorso base parte da 27€/mese (297€/anno). Il VIP parte da 197€/3 mesi. Business Protocol da 29€/mese.
+- I contenuti sono in lingua italiana e il programma è rivolto principalmente a un pubblico italiano.
+- "+500 atleti" hanno già iniziato il percorso secondo il sito.
+
+## Key Terms
+
+- mindset, mentalità, disciplina, abitudini atomiche, crescita personale, coaching online, performance mentale, superare le paure, eliminare le dipendenze, sviluppo personale, Gabriele Forestieri, Mind Project
+
+## Summary
+
+Mind Project (mind-project.com) è il programma di coaching online e mindset di Gabriele Forestieri. Il sito propone percorsi strutturati di crescita personale — Mind Project, Mind Project VIP e Business Protocol — basati su un metodo testato che integra neuroscienze, psicologia comportamentale e abitudini atomiche. Gli utenti accedono a video lezioni on-demand, chiamate di gruppo settimanali, esercizi pratici e una community esclusiva. È prevista una sfida gratuita di 30 giorni ("Sfida 30") per costruire abitudini. I piani sono venduti in abbonamento mensile o annuale con pagamenti sicuri via Stripe, con cancellazione in qualsiasi momento.
+
+## Contact
+
+- Email: gabriele.forestieri0912@gmail.com
+- Pagina contatti: https://mind-project.com/contacts
+
+## Links
+
+- [Homepage](https://mind-project.com/): Panoramica del programma, metodo e percorsi.
+- [Percorsi](https://mind-project.com/services): I tre percorsi Mind Project, Mind Project VIP e Business Protocol.
+- [Mind Project Base](https://mind-project.com/services/mind-project): Percorso base a partire da 27€/mese.
+- [Mind Project VIP](https://mind-project.com/services/mind-project-vip): Coaching 1-a-1, supporto 24/7, a partire da 197€/3 mesi.
+- [Business Protocol](https://mind-project.com/services/business-protocol): Ottimizzazione aziendale, a partire da 29€/mese.
+- [Sfida 30 Giorni](https://mind-project.com/habit/challenge): Sfida gratuita di 30 giorni per costruire abitudini.
+- [Chiamate Registrate](https://mind-project.com/mind-project/chiamate): Playlist delle sessioni di coaching registrate.
+- [Contatti](https://mind-project.com/contacts): Per domande sui programmi, risposta entro 24 ore.
+- [FAQ](https://mind-project.com/#faq): Domande frequenti sul programma e sui pagamenti.
+
+## Full text
+
+Per il contenuto completo del sito in formato testo, consulta [llms-full.txt](https://mind-project.com/llms-full.txt).

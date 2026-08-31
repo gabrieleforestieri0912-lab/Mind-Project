@@ -4,7 +4,6 @@ import Footer from '@/components/Footer';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { SupabaseAuthProvider } from '@/contexts/SupabaseAuthContext';
-import { ThemeProvider } from '@/contexts/ThemeContext';
 import { AnimatePresence, motion } from 'framer-motion';
 import { initAnalytics } from '@/lib/analytics';
 import type { AppProps } from 'next/app';
@@ -65,7 +64,6 @@ export default function App({ Component, pageProps }: AppProps) {
   const hideNavAndFooter = ['/login', '/signup'].includes(router.pathname);
 
   return (
-    <ThemeProvider>
     <SupabaseAuthProvider>
       {!hideNavAndFooter && <Navbar />}
       <div className={hideNavAndFooter ? '' : 'min-h-screen pt-20'}>
@@ -82,7 +80,6 @@ export default function App({ Component, pageProps }: AppProps) {
         </AnimatePresence>
       </div>
       {!hideNavAndFooter && <Footer />}
-      </SupabaseAuthProvider>
-    </ThemeProvider>
+    </SupabaseAuthProvider>
   );
 }

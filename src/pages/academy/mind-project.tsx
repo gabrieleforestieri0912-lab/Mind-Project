@@ -72,10 +72,16 @@ export default function AcademyMindProject() {
         if (!data.authenticated) {
           router.push('/login?callbackUrl=' + encodeURIComponent('/academy/mind-project'));
         } else {
-          setIsAuthorized(true);
-          const saved = localStorage.getItem('completedLessons');
-          if (saved) {
-            setCompletedLessons(JSON.parse(saved));
+          const user = data.user;
+          const hasSubscription = !!user?.subscription_type || !!user?.is_vip;
+          if (!hasSubscription) {
+            router.push('/services/mind-project');
+          } else {
+            setIsAuthorized(true);
+            const saved = localStorage.getItem('completedLessons');
+            if (saved) {
+              setCompletedLessons(JSON.parse(saved));
+            }
           }
         }
       } catch {

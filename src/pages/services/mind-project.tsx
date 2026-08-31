@@ -1,48 +1,99 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Shield, Zap, Target, Gift, ArrowRight } from 'lucide-react';
 import React from 'react';
 import Link from 'next/link';
+import SEO from '@/components/SEO';
 
 const features = [
-  'Videochiamata settimanale di gruppo con me',
+  'Videochiamata di gruppo settimanale dal vivo con me',
   'Crea quella persona che ammiri e rispetti',
-  'Cambia il tuo ambiente con il gruppo privato',
+  'Cambia il tuo ambiente con il gruppo privato di Mind Project',
   'Elimina le dipendenze e implementa buone abitudini',
   'Rompi credenze limitanti e supera le tue paure',
   "Supera l'insicurezza e la paura del giudizio altrui",
   'Allinea le tue azioni con il tuo scopo',
-  'Raggiungi tutti i tuoi obiettivi',
 ];
 
 const plans = [
   {
     name: 'Mensile',
-    price: '27€',
+    price: '37€',
+    priceValue: 37,
     duration: '/mese',
     highlight: false,
     cta: 'Inizia Ora',
-    bonuses: ['Video corso mentalità'],
+    service: 'MIND PROJECT',
+    plan: 'Mensile',
+    bonuses: ['Video corso mentalità per apprendere le basi'],
   },
   {
     name: 'Annuale',
-    price: '297€',
+    price: '397€',
+    priceValue: 397,
     duration: '/anno',
-    highlight: true,
-    badge: 'Risparmia il 10%',
-    cta: "Passa all'Azione",
-    bonuses: ['Video corso mentalità', 'Accesso alle chiamate registrate'],
+    highlight: false,
+    disabled: true,
+    badge: 'Offerta a tempo limitato',
+    cta: 'Non disponibile',
+    service: 'MIND PROJECT',
+    plan: 'Annuale',
+    bonuses: [
+      'Video corso mentalità per apprendere le basi',
+      'Videochiamata iniziale 1:1 con me',
+      'Accesso a tutte le Videochiamate Registrate (+20 ore)',
+    ],
   },
 ];
 
 export default function MindProjectBase() {
+  const productJsonLd = {
+    '@type': 'Product',
+    '@id': 'https://mind-project.com/services/mind-project#product',
+    name: 'Mind Project — Percorso Base di Mindset',
+    description:
+      'Programma di coaching online per rivoluzionare il mindset, superare le paure e raggiungere gli obiettivi con il supporto della community.',
+    image: 'https://mind-project.com/assets/mind-project.png',
+    brand: {
+      '@type': 'Brand',
+      name: 'Mind Project',
+    },
+    provider: {
+      '@type': 'Organization',
+      name: 'Mind Project',
+      url: 'https://mind-project.com',
+    },
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'Mind Project Mensile',
+        price: '37',
+        priceCurrency: 'EUR',
+        priceValidUntil: '2026-12-31',
+        availability: 'https://schema.org/InStock',
+        url: 'https://mind-project.com/services/mind-project',
+      },
+    ],
+  };
+
+  const breadcrumbJsonLd = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-project.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-project.com/services' },
+      { '@type': 'ListItem', position: 3, name: 'Mind Project Base', item: 'https://mind-project.com/services/mind-project' },
+    ],
+  };
+
   return (
     <>
-      <Head>
-        <title>Mind Project Base - Rivoluziona il tuo Mindset</title>
-        <meta name="description" content="Scopri il percorso base di Mind Project. Unisciti alla community e raggiungi i tuoi obiettivi." />
-      </Head>
+      <SEO
+        title="Mind Project Base - Rivoluziona il tuo Mindset"
+        description="Il percorso base di Mind Project: videochiamate settimanali di gruppo, community esclusiva e un metodo testato per eliminare le dipendenze, superare le paure e raggiungere i tuoi obiettivi. A partire da 37€/mese."
+        canonicalUrl="https://mind-project.com/services/mind-project"
+        keywords={['Mind Project base', 'percorso mindset', 'coaching online', 'crescita personale', 'community esclusiva', 'eliminare dipendenze']}
+        jsonLd={[productJsonLd, breadcrumbJsonLd]}
+      />
       <main className="min-h-screen bg-[#050505] text-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/[0.06] blur-[120px] rounded-full" />
@@ -80,7 +131,7 @@ export default function MindProjectBase() {
             >
               <div className="relative aspect-square md:aspect-video lg:aspect-square w-full max-w-lg mx-auto rounded-3xl overflow-hidden border border-white/[0.06] shadow-2xl">
                 <Image
-                  src="/assets/Image/mind-project.png"
+                  src="/assets/mind-project.png"
                   alt="Mind Project Base"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -130,14 +181,16 @@ export default function MindProjectBase() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.2 }}
-                  className={`relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl border transition-all duration-300 hover:-translate-y-1 ${
-                    plan.highlight
-                      ? 'bg-gradient-to-br from-blue-900/30 to-cyan-900/20 border-blue-500/30 shadow-xl shadow-blue-500/10'
-                      : 'bg-white/[0.02] border-white/[0.06] hover:border-blue-500/20'
+                  className={`relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl border transition-all duration-300 ${
+                    plan.disabled
+                      ? 'bg-white/[0.01] border-white/[0.04] opacity-70'
+                      : `hover:-translate-y-1 ${plan.highlight
+                        ? 'bg-gradient-to-br from-blue-900/30 to-cyan-900/20 border-blue-500/30 shadow-xl shadow-blue-500/10'
+                        : 'bg-white/[0.02] border-white/[0.06] hover:border-blue-500/20'}`
                   }`}
                 >
                   {plan.badge && (
-                    <div className="absolute -top-3 right-4 sm:right-6 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                    <div className="absolute -top-3 right-4 sm:right-6 bg-gradient-to-r from-gray-500 to-gray-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
                       {plan.badge}
                     </div>
                   )}
@@ -146,13 +199,25 @@ export default function MindProjectBase() {
                     <span className="text-3xl sm:text-4xl font-black italic">{plan.price}</span>
                     <span className="text-sm sm:text-base text-gray-500 font-bold">{plan.duration}</span>
                   </div>
-                  <button className={`w-full py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
-                    plan.highlight
-                      ? 'bg-white text-[#050505] hover:bg-gray-200 hover:shadow-lg hover:shadow-white/20'
-                      : 'bg-white/[0.05] text-white hover:bg-white/[0.1] border border-white/[0.08]'
-                  }`}>
-                    {plan.cta} <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  {plan.disabled ? (
+                    <button
+                      disabled
+                      className="w-full py-3.5 rounded-xl font-black text-sm uppercase tracking-wider cursor-not-allowed flex items-center justify-center gap-2 bg-white/[0.03] text-gray-500 border border-white/[0.06]"
+                    >
+                      {plan.cta}
+                    </button>
+                  ) : (
+                    <Link
+                      href={`/payment/checkout?service=${encodeURIComponent(plan.service)}&plan=${encodeURIComponent(plan.plan)}&price=${plan.priceValue}`}
+                      className={`w-full py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
+                        plan.highlight
+                          ? 'bg-white text-[#050505] hover:bg-gray-200 hover:shadow-lg hover:shadow-white/20'
+                          : 'bg-white/[0.05] text-white hover:bg-white/[0.1] border border-white/[0.08]'
+                      }`}
+                    >
+                      {plan.cta} <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  )}
 
                   {plan.bonuses && plan.bonuses.length > 0 && (
                     <div className="mt-5 pt-5 border-t border-white/[0.06]">

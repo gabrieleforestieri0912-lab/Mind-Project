@@ -1,55 +1,128 @@
-import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Crown, CheckCircle2, Shield, Star, PhoneCall, Gift, ArrowRight } from 'lucide-react';
 import React from 'react';
+import SEO from '@/components/SEO';
 
 const features = [
-  '2 Videochiamate 1 a 1 con me',
-  '3 Videochiamate di gruppo ogni settimana',
-  'Supporto completo',
-  'Live esclusiva con me',
-  'Supporto 24/7',
-  'SOS CALL in caso di emergenza',
+  '1 Videochiamata strategica 1:1 con me per comprendere il tuo punto',
+  "Piano d'azione per il lancio del tuo servizio personalizzato",
+  "Guida all'impacchettamento delle tue offerte",
+  '2 Videochiamate di supporto 1:1 con me',
+  'Supporto Whatsapp 24/7',
+  '3 Videochiamate di gruppo dal vivo ogni settimana con me',
+  'Formazione Personal Brand',
+  'Impara le abitudini e la mentalità che mi hanno permesso di moltiplicare i miei risultati',
 ];
 
 const vipBonuses = [
   'Accesso a tutte le chiamate registrate',
-  'Accesso a tutti i corsi di MIND PROJECT (Video corso mentalità e altri)',
+  'Accesso a tutti i corsi di MIND PROJECT',
+  'Live esclusiva con me',
+  'SOS CALL in caso di emergenza',
 ];
 
 const plans = [
   {
     name: 'Trimestrale',
     price: '197€',
+    priceValue: 197,
     duration: '/3 mesi',
     highlight: false,
     cta: 'Diventa VIP',
+    service: 'MIND PROJECT VIP',
+    plan: 'Trimestrale',
   },
   {
     name: 'Semestrale',
     price: '397€',
+    priceValue: 397,
     duration: '/6 mesi',
     highlight: false,
     cta: 'Diventa VIP',
+    service: 'MIND PROJECT VIP',
+    plan: 'Semestrale',
   },
   {
     name: 'Annuale',
     price: '697€',
+    priceValue: 697,
     duration: '/anno',
     highlight: true,
     badge: 'La Scelta dei Leader',
     cta: 'Accedi al Massimo Livello',
+    service: 'MIND PROJECT VIP',
+    plan: 'Annuale',
   },
 ];
 
 export default function MindProjectVip() {
+  const productJsonLd = {
+    '@type': 'Product',
+    '@id': 'https://mind-project.com/services/mind-project-vip#product',
+    name: 'Mind Project VIP — Coaching 1-a-1 Esclusivo',
+    description:
+      "Accesso totale al programma Mind Project con coaching individuale, supporto 24/7, live esclusive e SOS CALL per risultati straordinari senza compromessi.",
+    image: 'https://mind-project.com/assets/mind-project-vip.png',
+    brand: {
+      '@type': 'Brand',
+      name: 'Mind Project',
+    },
+    provider: {
+      '@type': 'Organization',
+      name: 'Mind Project',
+      url: 'https://mind-project.com',
+    },
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'VIP Trimestrale',
+        price: '197',
+        priceCurrency: 'EUR',
+        priceValidUntil: '2026-12-31',
+        availability: 'https://schema.org/InStock',
+        url: 'https://mind-project.com/services/mind-project-vip',
+      },
+      {
+        '@type': 'Offer',
+        name: 'VIP Semestrale',
+        price: '397',
+        priceCurrency: 'EUR',
+        priceValidUntil: '2026-12-31',
+        availability: 'https://schema.org/InStock',
+        url: 'https://mind-project.com/services/mind-project-vip',
+      },
+      {
+        '@type': 'Offer',
+        name: 'VIP Annuale',
+        price: '697',
+        priceCurrency: 'EUR',
+        priceValidUntil: '2026-12-31',
+        availability: 'https://schema.org/InStock',
+        url: 'https://mind-project.com/services/mind-project-vip',
+      },
+    ],
+  };
+
+  const breadcrumbJsonLd = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-project.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-project.com/services' },
+      { '@type': 'ListItem', position: 3, name: 'Mind Project VIP', item: 'https://mind-project.com/services/mind-project-vip' },
+    ],
+  };
+
   return (
     <>
-      <Head>
-        <title>Mind Project VIP - L'Elite del Mindset</title>
-        <meta name="description" content="Accesso esclusivo, coaching 1-a-1 e supporto h24. Il livello definitivo di Mind Project." />
-      </Head>
+      <SEO
+        title="Mind Project VIP - L'Elite del Mindset"
+        description="Accesso esclusivo al programma Mind Project con coaching 1-a-1, supporto 24/7, live esclusive e SOS CALL. Il livello definitivo di Mind Project, a partire da 197€/3 mesi."
+        canonicalUrl="https://mind-project.com/services/mind-project-vip"
+        keywords={['Mind Project VIP', 'coaching 1 a 1', 'coaching privato', 'supporto 24/7', 'mindset esclusivo', 'programma elite']}
+        jsonLd={[productJsonLd, breadcrumbJsonLd]}
+      />
       <main className="min-h-screen bg-[#050505] text-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-amber-600/[0.05] blur-[120px] rounded-full" />
@@ -87,7 +160,7 @@ export default function MindProjectVip() {
             >
               <div className="relative aspect-square md:aspect-video lg:aspect-square w-full max-w-lg mx-auto rounded-3xl overflow-hidden border border-white/[0.06] shadow-2xl">
                 <Image
-                  src="/assets/Image/mind-project-vip.png"
+                  src="/assets/mind-project-vip.png"
                   alt="Mind Project VIP"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -116,7 +189,7 @@ export default function MindProjectVip() {
                 </div>
                 <ul className="space-y-3 sm:space-y-4 relative z-10">
                   {features.map((feature, idx) => {
-                    const isSpecial = feature.includes('SOS CALL') || feature.includes('1 a 1');
+                    const isSpecial = feature.includes('SOS CALL') || feature.includes('1:1') || feature.includes('1 a 1');
                     return (
                       <motion.li
                         key={idx}
@@ -185,13 +258,16 @@ export default function MindProjectVip() {
                     </p>
                   </div>
 
-                  <button className={`w-full py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
-                    plan.highlight
-                      ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-black hover:from-amber-300 hover:to-yellow-400 shadow-lg shadow-amber-500/20'
-                      : 'bg-white/[0.05] text-white hover:bg-white/[0.1] border border-white/[0.08]'
-                  }`}>
+                  <Link
+                    href={`/payment/checkout?service=${encodeURIComponent(plan.service)}&plan=${encodeURIComponent(plan.plan)}&price=${plan.priceValue}`}
+                    className={`w-full py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
+                      plan.highlight
+                        ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-black hover:from-amber-300 hover:to-yellow-400 shadow-lg shadow-amber-500/20'
+                        : 'bg-white/[0.05] text-white hover:bg-white/[0.1] border border-white/[0.08]'
+                    }`}
+                  >
                     {plan.cta} {plan.highlight ? <Crown className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
-                  </button>
+                  </Link>
                 </motion.div>
               ))}
             </div>

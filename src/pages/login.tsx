@@ -71,7 +71,8 @@ export default function Login() {
       <SEO
         title="Accedi"
         description="Accedi al tuo account Mind Project per riprendere il tuo allenamento."
-        canonicalUrl="https://mind-project.com/homepage/login"
+        canonicalUrl="https://mind-project.com/login"
+        noIndex
       />
       <main className="min-h-screen grid lg:grid-cols-2">
         <div className="hidden lg:flex relative bg-[#080808] items-start justify-center pt-0 pb-8 px-8 overflow-hidden">

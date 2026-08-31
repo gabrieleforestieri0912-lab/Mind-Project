@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
-import jwt from 'jsonwebtoken';
-import { getToken } from 'next-auth/jwt';
+import { getSession } from '@/lib/supabase-server';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2025-03-31' as Stripe.LatestApiVersion,
@@ -9,17 +8,16 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 const PRICING_CATALOG: Record<string, Record<string, number>> = {
   'MIND PROJECT': {
-    Mensile: 30,
-    Trimestrale: 80,
-    Annuale: 280,
+    Mensile: 37,
   },
   'MIND PROJECT VIP': {
-    Trimestrale: 150,
-    Semestrale: 280,
-    Annuale: 500,
+    Trimestrale: 197,
+    Semestrale: 397,
+    Annuale: 697,
   },
   'BUSINESS PROTOCOL': {
-    Trimestrale: 197,
+    Semestrale: 497,
+    Annuale: 897,
   },
 };
 
@@ -46,19 +44,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let userEmail: string | null = null;
     let userId: string | null = null;
 
-    const nextAuthToken = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-    if (nextAuthToken?.email) {
-      userEmail = nextAuthToken.email as string;
-    } else {
-      const { auth_token } = req.cookies;
-      if (auth_token) {
-        try {
-          const decoded = jwt.verify(auth_token, process.env.JWT_SECRET!) as { userId: string };
-          userId = decoded.userId;
-        } catch {
-          // Non bloccante
-        }
-      }
+    try {
+      const session = await getSession(req, res);
+      userEmail = session?.user?.email ?? null;
+      userId = session?.user?.id ?? null;
+    } catch {
+      // Non bloccante
     }
 
     const paymentIntent = await stripe.paymentIntents.create({

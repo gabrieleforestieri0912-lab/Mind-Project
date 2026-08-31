@@ -1,0 +1,95 @@
+# Mind Project — Sito completo
+
+Mind Project (https://mind-project.com) è il programma di coaching online e crescita personale fondato da Gabriele Forestieri, performance coach. Il sito è interamente in italiano.
+
+## Informazioni sull'azienda / persona
+
+- Nome: Mind Project
+- Fondatore e coach: Gabriele Forestieri
+- Email di contatto: gabriele.forestieri0912@gmail.com
+- URL: https://mind-project.com
+- Tipo di attività: coaching online, programmi di mindset e crescita personale, ottimizzazione aziendale (Business Protocol)
+- Pagamenti: Stripe, transazioni sicure e crittografate
+- Lingua: italiano (it_IT)
+
+## Il metodo
+
+Il metodo Mind Project non si basa sulla motivazione passeggera ma su un sistema replicabile di abitudini, credenze e azioni. I tre pilastri:
+
+1. **Mindset Reset**: riscrittura delle credenze limitanti e sostituzione dei pattern mentali distruttivi con programmi di pensiero funzionali. Basato su neuroscienze e cognitive reframing.
+2. **Abitudini Atomiche**: micro-abitudini quotidiane che si accumulano in risultati straordinari nel tempo (habit stacking).
+3. **Disciplina Operativa**: routine operativa che porta ad agire ogni giorno, indipendentemente dallo stato emotivo.
+
+Il percorso prevede 4 fasi: Diagnosi (analisi dello stato attuale), Reset (eliminazione dei pattern limitanti), Costruzione (implementazione delle abitudini atomiche), Evoluzione (monitoraggio e calibrazione del sistema).
+
+## Percorsi offerti
+
+### 1. Mind Project (percorso base)
+- Prezzo: 27€/mese oppure 297€/anno (risparmia il 10%)
+- Include: videochiamata settimanale di gruppo, gruppo privato, video corso sulla mentalità
+- Caratteristiche: eliminazione delle dipendenze, implementazione di buone abitudini, superamento delle paure e delle insicurezze, allineamento delle azioni allo scopo, raggiungimento degli obiettivi
+- Pagina: https://mind-project.com/services/mind-project
+
+### 2. Mind Project VIP (esperienza esclusiva)
+- Prezzo: 197€/3 mesi, 397€/6 mesi, 697€/anno
+- Include: 2 videochiamate 1-a-1 con il coach, 3 videochiamate di gruppo a settimana, supporto completo, live esclusiva, supporto 24/7, SOS CALL in caso di emergenza
+- Bonus: accesso a tutte le chiamate registrate, accesso a tutti i corsi di Mind Project
+- Pagina: https://mind-project.com/services/mind-project-vip
+
+### 3. Business Protocol (per aziende)
+- Prezzo: 29€/mese (Standard) oppure 59€/mese (Advanced, consigliato)
+- Include: ottimizzazione dei processi aziendali, scalabilità e incremento fatturato, sistemi di controllo e sicurezza, consulenza strategica direzionale
+- Advanced: implementazione completa, supporto priority live (24h), audit mensile personalizzato, accesso al network esclusivo
+- Pagina: https://mind-project.com/services/business-protocol
+
+## Sfida 30 Giorni
+
+Sfida gratuita di 30 giorni disponibile per gli utenti registrati per costruire e consolidare abitudini vincenti, con tracciamento giornaliero del progresso. Pagina: https://mind-project.com/habit/challenge
+
+## Video corso e chiamate registrate
+
+Gli utenti con accesso ricevono il video corso sulla mentalità con moduli su fondamenti del mindset, abitudini atomiche e disciplina incrollabile. La playlist delle chiamate registrate include 8 episodi su: impostazione della mentalità, gestione del tempo, disciplina vs motivazione, superamento dei momenti di blocco, identità e narrativa personale, Q&A della community, resilienza e piano 90 giorni.
+
+## Statistiche dichiarate
+
+- 500+ atleti hanno iniziato il percorso
+- 3+ anni di ricerca
+- 1 metodo testato
+
+## FAQ
+
+### Come funziona il percorso Mind Project?
+Mind Project è un programma strutturato di crescita personale che combina video lezioni, chiamate settimanali di gruppo, esercizi pratici e una community esclusiva. Ogni modulo affronta un aspetto specifico del mindset per permettere un'evoluzione completa e duratura.
+
+### Quanto tempo devo dedicare ogni settimana?
+Il programma è flessibile. Le video lezioni sono on-demand. La chiamata settimanale di gruppo dura circa 50 minuti. In totale si consigliano almeno 2-3 ore a settimana per risultati significativi.
+
+### Cosa include la membership VIP?
+Tutto ciò che offre il percorso base, più sessioni di coaching individuali, accesso 24/7 via messaggio, analisi personalizzata del progresso e materiali esclusivi avanzati.
+
+### Posso cancellare l'abbonamento in qualsiasi momento?
+Sì. Per gli abbonamenti mensili l'accesso resta attivo fino alla fine del mese corrente. Per gli abbonamenti annuali contattare per i termini di rimborso.
+
+### I pagamenti sono sicuri?
+Sì. Stripe è il processore di pagamento, i dati di pagamento sono crittografati e mai memorizzati sui server.
+
+### Ho bisogno di esperienze pregresse?
+No, il programma è progettato per funzionare a qualsiasi livello. I contenuti guidano passo dopo passo indipendentemente dal punto di partenza.
+
+## Pagine del sito
+
+- Homepage: https://mind-project.com/
+- Percorsi (overview): https://mind-project.com/services
+- Mind Project Base: https://mind-project.com/services/mind-project
+- Mind Project VIP: https://mind-project.com/services/mind-project-vip
+- Business Protocol: https://mind-project.com/services/business-protocol
+- Sfida 30 Giorni: https://mind-project.com/habit/challenge
+- Chiamate Registrate: https://mind-project.com/mind-project/chiamate
+- Video corso (area riservata): https://mind-project.com/academy/mind-project
+- Contatti: https://mind-project.com/contacts
+- Privacy Policy: https://mind-project.com/privacy-policy
+- Termini di Servizio: https://mind-project.com/terms-of-service
+
+## Contatti
+
+Per domande sui programmi di coaching, sui pagamenti o sul supporto: gabriele.forestieri0912@gmail.com oppure https://mind-project.com/contacts. Risposta entro 24 ore.

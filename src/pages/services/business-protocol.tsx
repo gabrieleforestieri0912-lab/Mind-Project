@@ -1,43 +1,116 @@
-import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Briefcase, CheckCircle2, TrendingUp, ShieldCheck, BarChart3, ArrowRight } from 'lucide-react';
+import { Rocket, CheckCircle2, Users, Target, Crown, Gift, ArrowRight, Brain } from 'lucide-react';
 import React from 'react';
+import SEO from '@/components/SEO';
 
 const features = [
-  { icon: TrendingUp, text: 'Ottimizzazione dei Processi Aziendali' },
-  { icon: BarChart3, text: 'Scalabilità e Incremento Fatturato' },
-  { icon: ShieldCheck, text: 'Sistemi di Controllo e Sicurezza' },
-  { icon: Briefcase, text: 'Consulenza Strategica Direzionale' },
+  { icon: Rocket, text: 'Monetizza la tua passione con il Personal Brand' },
+  { icon: Users, text: 'Community esclusiva su WhatsApp con persone affamate' },
+  { icon: Brain, text: 'Mentalità per monetizzare la tua passione in meno di 4 mesi' },
+  { icon: Target, text: "Piano d'azione su misura per i tuoi obiettivi economici" },
+];
+
+const pathFeatures = [
+  '2 Videochiamate di gruppo dal vivo ogni settimana con me',
+  'Community esclusiva con persone affamate su Whatsapp',
+  'Scopri come attrarre clienti, creare il tuo Personal Brand e monetizzarlo',
+  'Apprendi la mentalità che mi ha permesso di monetizzare la mia passione in meno di 4 mesi',
+  'Migliora autostima, fiducia in te stesso, disciplina per avviare la tua attività',
+  'Elimina la paura del giudizio altrui che ti impedisce di crescere nel tuo business',
+  'Elimina paure, vizi, cattive abitudini e procrastinazione che ti stanno bloccando',
+  'Elimina la sindrome dell’impostore',
+  'Piano d’azione su misura per raggiungere tutti i tuoi obiettivi economici in meno di 3 mesi',
+  'Cambia il tuo ambiente circondandoti di vincitori',
+  'Impara le abitudini per far decollare la tua attività',
+];
+
+const bonuses = [
+  '1 Anno intero di videochiamate di gruppo settimanali',
+  'Video corso sul Personal Brand',
+  'Strategia iniziale videochiamata 1:1',
 ];
 
 const plans = [
   {
-    name: 'Standard',
-    price: '29€',
-    duration: '/mese',
+    name: 'Semestrale',
+    price: '497€',
+    priceValue: 497,
+    duration: '/6 mesi',
     highlight: false,
-    features: ['Implementazione protocollo base', 'Supporto via email entro 48h', 'Accesso alla documentazione'],
     cta: 'Inizia Ora',
+    service: 'BUSINESS PROTOCOL',
+    plan: 'Semestrale',
   },
   {
-    name: 'Advanced',
-    price: '59€',
-    duration: '/mese',
+    name: 'Annuale',
+    price: '897€',
+    priceValue: 897,
+    duration: '/anno',
     highlight: true,
-    badge: 'Consigliato',
-    features: ['Implementazione protocollo completa', 'Supporto Priority Live (24h)', 'Audit mensile personalizzato', 'Accesso al network esclusivo'],
-    cta: 'Scegli Advanced',
+    badge: 'La Scelta dei Vincitori',
+    cta: 'Accedi al Percorso',
+    service: 'BUSINESS PROTOCOL',
+    plan: 'Annuale',
   },
 ];
 
 export default function BusinessProtocol() {
+  const productJsonLd = {
+    '@type': 'Service',
+    '@id': 'https://mind-project.com/services/business-protocol#service',
+    name: 'Business Protocol — Monetizza la tua Passione',
+    description:
+      'Monetizza la tua passione attraverso il Personal Brand e scappa dal sistema. Blueprint per recuperare il tuo investimento entro 90 giorni.',
+    image: 'https://mind-project.com/assets/business-protocol.png',
+    serviceType: 'Personal Brand Coaching',
+    provider: {
+      '@type': 'Organization',
+      name: 'Mind Project',
+      url: 'https://mind-project.com',
+    },
+    areaServed: { '@type': 'Country', name: 'Italy' },
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'Business Protocol Semestrale',
+        price: '497',
+        priceCurrency: 'EUR',
+        priceValidUntil: '2026-12-31',
+        availability: 'https://schema.org/InStock',
+        url: 'https://mind-project.com/services/business-protocol',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Business Protocol Annuale',
+        price: '897',
+        priceCurrency: 'EUR',
+        priceValidUntil: '2026-12-31',
+        availability: 'https://schema.org/InStock',
+        url: 'https://mind-project.com/services/business-protocol',
+      },
+    ],
+  };
+
+  const breadcrumbJsonLd = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mind-project.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Percorsi', item: 'https://mind-project.com/services' },
+      { '@type': 'ListItem', position: 3, name: 'Business Protocol', item: 'https://mind-project.com/services/business-protocol' },
+    ],
+  };
+
   return (
     <>
-      <Head>
-        <title>Business Protocol - Ottimizza il tuo Business</title>
-        <meta name="description" content="Soluzioni avanzate per ottimizzare i processi aziendali e scalare il tuo business." />
-      </Head>
+      <SEO
+        title="Business Protocol - Monetizza la tua Passione"
+        description="Monetizza la tua passione attraverso il Personal Brand e scappa dal sistema. Blueprint per recuperare il tuo investimento entro 90 giorni. A partire da 497€/6 mesi."
+        canonicalUrl="https://mind-project.com/services/business-protocol"
+        keywords={['business protocol', 'personal brand', 'monetizzare la passione', 'business online', 'community whatsapp']}
+        jsonLd={[productJsonLd, breadcrumbJsonLd]}
+      />
       <main className="min-h-screen bg-[#050505] text-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[20%] left-[-10%] w-[50%] h-[50%] bg-emerald-600/[0.05] blur-[120px] rounded-full" />
@@ -53,17 +126,17 @@ export default function BusinessProtocol() {
               className="w-full lg:w-1/2"
             >
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
-                <Briefcase className="w-3.5 h-3.5 text-emerald-400" />
+                <Rocket className="w-3.5 h-3.5 text-emerald-400" />
                 <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] text-emerald-400">
-                  Per le Aziende
+                  Personal Brand
                 </span>
               </div>
               <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-black italic uppercase tracking-tighter leading-[0.9] mb-5">
-                Scala il tuo <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Business.</span>
+                Monetizza la tua <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Passione.</span>
               </h1>
               <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-8">
-                Struttura la tua azienda con i protocolli esatti utilizzati dai leader di mercato. Ottimizza i processi, riduci gli sprechi e massimizza i profitti in modo prevedibile.
+                Scappa dal sistema e trasforma la tua passione in un business attraverso il tuo Personal Brand. Blueprint per recuperare il tuo investimento entro 90 giorni.
               </p>
 
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
@@ -86,7 +159,7 @@ export default function BusinessProtocol() {
             >
               <div className="relative aspect-video lg:aspect-[4/3] w-full mx-auto rounded-3xl overflow-hidden border border-white/[0.06] shadow-2xl">
                 <Image
-                  src="/assets/Image/content.jpg"
+                  src="/assets/business-protocol.png"
                   alt="Business Protocol"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -105,13 +178,13 @@ export default function BusinessProtocol() {
               className="text-center mb-10 sm:mb-14"
             >
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-accent-primary mb-4 block">
-                Piani di Implementazione
+                Il Percorso
               </span>
               <h2 className="text-2xl sm:text-3xl font-black italic uppercase tracking-tight mb-4 pr-[0.1em]">
-                Scegli il <span className="gradient-text">Tuo Livello</span>
+                Cosa Ricevi <span className="gradient-text">Oggi</span>
               </h2>
               <p className="text-gray-500 text-sm sm:text-base max-w-2xl mx-auto">
-                Seleziona il supporto più adatto alla struttura attuale della tua azienda.
+                Tutto ciò che ti serve per creare il tuo Personal Brand, attrarre clienti e monetizzare la tua passione.
               </p>
             </motion.div>
 
@@ -144,7 +217,7 @@ export default function BusinessProtocol() {
                   </div>
 
                   <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-grow">
-                    {plan.features.map((f, i) => (
+                    {pathFeatures.map((f, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <CheckCircle2 className={`w-5 h-5 shrink-0 mt-0.5 ${plan.highlight ? 'text-emerald-400' : 'text-gray-600'}`} />
                         <span className="text-gray-300 text-sm sm:text-base">{f}</span>
@@ -152,13 +225,33 @@ export default function BusinessProtocol() {
                     ))}
                   </ul>
 
-                  <button className={`w-full py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 mt-auto ${
-                    plan.highlight
-                      ? 'bg-emerald-500 text-black hover:bg-emerald-400 shadow-lg shadow-emerald-500/20'
-                      : 'bg-white/[0.05] text-white hover:bg-white/[0.1] border border-white/[0.08]'
-                  }`}>
+                  <div className="mb-6 sm:mb-8 pt-5 border-t border-white/[0.06]">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Gift className="w-3.5 h-3.5 text-emerald-400" />
+                      <span className="text-[10px] font-black uppercase tracking-wider text-emerald-400">Bonus Inclusi:</span>
+                    </div>
+                    <ul className="space-y-2">
+                      {bonuses.map((bonus, bIdx) => (
+                        <li key={bIdx} className="flex items-start gap-2 text-sm text-gray-400">
+                          <span className="text-emerald-500 mt-0.5">•</span> {bonus}
+                        </li>
+                      ))}
+                      <li className="flex items-start gap-2 text-sm text-amber-300 font-bold">
+                        <span className="text-amber-400 mt-0.5">🎁</span> Bonus regalo 1 anno di Mind Project (Valore 397€)
+                      </li>
+                    </ul>
+                  </div>
+
+                  <Link
+                    href={`/payment/checkout?service=${encodeURIComponent(plan.service)}&plan=${encodeURIComponent(plan.plan)}&price=${plan.priceValue}`}
+                    className={`w-full py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 mt-auto ${
+                      plan.highlight
+                        ? 'bg-emerald-500 text-black hover:bg-emerald-400 shadow-lg shadow-emerald-500/20'
+                        : 'bg-white/[0.05] text-white hover:bg-white/[0.1] border border-white/[0.08]'
+                    }`}
+                  >
                     {plan.cta} <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  </Link>
                 </motion.div>
               ))}
             </div>

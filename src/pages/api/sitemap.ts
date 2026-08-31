@@ -4,13 +4,16 @@ const BASE_URL = 'https://mind-project.com';
 
 const pages = [
   { url: '/', priority: '1.0', changefreq: 'weekly' },
-  { url: '/mind-project/chiamate', priority: '0.8', changefreq: 'weekly' },
-  { url: '/homepage/services', priority: '0.9', changefreq: 'monthly' },
-  { url: '/homepage/contacts', priority: '0.7', changefreq: 'monthly' },
-  { url: '/homepage/faq', priority: '0.6', changefreq: 'monthly' },
-  { url: '/homepage/login', priority: '0.5', changefreq: 'yearly' },
-  { url: '/homepage/signup', priority: '0.5', changefreq: 'yearly' },
+  { url: '/services', priority: '0.9', changefreq: 'monthly' },
+  { url: '/services/mind-project', priority: '0.9', changefreq: 'monthly' },
+  { url: '/services/mind-project-vip', priority: '0.9', changefreq: 'monthly' },
+  { url: '/services/business-protocol', priority: '0.9', changefreq: 'monthly' },
+  { url: '/services/hell-room', priority: '0.4', changefreq: 'monthly' },
   { url: '/habit/challenge', priority: '0.8', changefreq: 'weekly' },
+  { url: '/mind-project/chiamate', priority: '0.7', changefreq: 'weekly' },
+  { url: '/contacts', priority: '0.7', changefreq: 'monthly' },
+  { url: '/privacy-policy', priority: '0.3', changefreq: 'yearly' },
+  { url: '/terms-of-service', priority: '0.3', changefreq: 'yearly' },
 ];
 
 export default function handler(_req: NextApiRequest, res: NextApiResponse) {

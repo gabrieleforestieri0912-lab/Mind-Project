@@ -20,7 +20,6 @@ import {
   Brain,
 } from 'lucide-react';
 import { useSupabaseAuth } from '@/contexts/SupabaseAuthContext';
-import ThemeToggle from '@/components/ThemeToggle';
 
 interface NavUser {
   name?: string;
@@ -95,24 +94,16 @@ export default function Navbar() {
     return (user.email || 'U')[0].toUpperCase();
   };
 
-  const navLinks = [
-    { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
-    ...(isLoggedIn
-      ? [{
-          name: 'Video Corso',
-          href: '/academy/mind-project',
-          icon: <Brain className="w-4 h-4" />,
-        }]
-      : []),
-    {
-      name: 'Servizi',
+const navLinks = [
+  { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
+  {
+    name: 'Servizi',
       href: '/services',
       icon: <Dumbbell className="w-4 h-4" />,
       submenu: [
-        { name: 'Piani e Offerte', href: '/services/piani-e-offerte' },
-        { name: 'Business Protocol', href: '/services/business-protocol' },
-        { name: 'Videocorso', href: '/services/videocorso' },
-        { name: 'Chiamate Registrate', href: '/services/chiamate-registrate' },
+        { name: 'Piani e Offerte', href: '/services' },
+        { name: 'Videocorso', href: '/academy/mind-project' },
+        { name: 'Chiamate Registrate', href: '/mind-project/chiamate' },
       ],
     },
     {
@@ -150,7 +141,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-2 group relative">
               <div className="relative w-10 h-10 flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-110">
                 <Image
-                  src="/assets/Image/mind-project-icon.png"
+                  src="/assets/mind-project-icon.png"
                   alt="Logo"
                   fill
                   sizes="40px"
@@ -212,7 +203,6 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center gap-2">
-              <ThemeToggle />
               {!isLoggedIn ? (
                 <Link
                   href="/login"

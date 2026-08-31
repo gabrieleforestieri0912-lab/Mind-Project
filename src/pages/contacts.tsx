@@ -45,7 +45,7 @@ export default function Contacts() {
       <SEO
         title="Contatti"
         description="Contattaci per domande sui programmi di coaching e mindset. Risposta entro 24 ore."
-        canonicalUrl="https://mind-project.com/homepage/contacts"
+        canonicalUrl="https://mind-project.com/contacts"
         keywords={['contatti coaching', 'supporto mindset', 'info Mind Project']}
       />
 

@@ -24,15 +24,30 @@ export function SupabaseAuthProvider({ children }: { children: React.ReactNode }
   const supabase = createClient();
 
   useEffect(() => {
+    const syncUser = async () => {
+      try {
+        await fetch('/api/auth/sync', {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({}),
+        });
+      } catch {
+        /* non-blocking */
+      }
+    };
+
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setUser(session?.user ?? null);
       setIsLoading(false);
+      if (session?.user) syncUser();
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       setSession(session);
       setUser(session?.user ?? null);
+      if (event === 'SIGNED_IN' && session?.user) syncUser();
     });
 
     return () => subscription.unsubscribe();

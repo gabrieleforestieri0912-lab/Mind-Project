@@ -12,7 +12,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5 group">
               <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-110">
                 <Image
-                  src="/assets/Image/mind-project-icon.png"
+                  src="/assets/mind-project-icon.png"
                   alt="Mind Project Logo"
                   fill
                   sizes="40px"
