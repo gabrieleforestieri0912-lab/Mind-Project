@@ -187,104 +187,90 @@ export default function HomePage() {
 
       <main className="bg-[#050505] text-white">
         {/* Hero */}
-        <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-accent-primary/[0.04] blur-[200px] rounded-full" />
-            <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-600/[0.03] blur-[180px] rounded-full" />
+            <Image
+              src="/assets/mind-project.png"
+              alt=""
+              aria-hidden
+              fill
+              sizes="100vw"
+              className="object-cover object-top opacity-25"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/70 via-[#050505]/80 to-[#050505]" />
+            <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[60%] h-[60%] bg-accent-primary/[0.06] blur-[200px] rounded-full" />
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-20 pb-16">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              <div className="max-w-xl">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-primary/10 border border-accent-primary/20 mb-6 sm:mb-8"
-                >
-                  <Target className="w-3.5 h-3.5 text-accent-primary" />
-                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] text-accent-primary">
-                    Il Programma di Crescita Personale
-                  </span>
-                </motion.div>
+          <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 w-full pt-24 pb-16 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-primary/10 border border-accent-primary/20 mb-6 sm:mb-8"
+            >
+              <Target className="w-3.5 h-3.5 text-accent-primary" />
+              <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] text-accent-primary">
+                Il Programma di Crescita Personale
+              </span>
+            </motion.div>
 
-                <motion.h1
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.1 }}
-                  className="text-[clamp(2rem,7vw,3.5rem)] font-black italic tracking-tighter leading-[0.9] uppercase mb-6 pr-[0.15em]"
-                >
-                  Diventa la
-                  <br />
-                  <span className="gradient-text">Persona che Ammiri</span>
-                </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-[clamp(2.2rem,7vw,4rem)] font-black italic tracking-tighter leading-[0.95] uppercase mb-6"
+            >
+              Diventa la
+              <br />
+              <span className="gradient-text">Persona che Ammiri</span>
+            </motion.h1>
 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="text-sm sm:text-base md:text-lg text-gray-400 mb-8 sm:mb-10 leading-relaxed"
-                >
-                  Supera le tue paure, elimina le dipendenze, implementa abitudini vincenti e raggiungi ogni obiettivo che ti sei prefissato. Con il metodo Mind Project.
-                </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-sm sm:text-base md:text-lg text-gray-300 mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto"
+            >
+              Supera le tue paure, elimina le dipendenze, implementa abitudini vincenti e raggiungi ogni obiettivo che ti sei prefissato. Con il metodo Mind Project.
+            </motion.p>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="flex flex-col sm:flex-row gap-3 sm:gap-4"
-                >
-                  <Link
-                    href="/services"
-                  className="inline-flex items-center justify-center gap-2 bg-accent-primary text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(255,180,0,0.25)] active:scale-[0.97]"
-                >
-                  Inizia il Tuo Percorso
-                  <ChevronRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/login"
-                  className="inline-flex items-center justify-center gap-2 bg-white/[0.04] border border-white/[0.08] px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 hover:bg-white/[0.08] active:scale-[0.97]"
-                  >
-                    Accedi all&apos;Area Riservata
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  className="mt-10 sm:mt-12 inline-flex flex-wrap items-center gap-2 sm:gap-4"
-                >
-                  {['Neuroscienze', 'Psicologia Comportamentale', 'Abitudini Atomiche'].map((tag, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-gray-500"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </motion.div>
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="hidden lg:block relative"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
+            >
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center gap-2 bg-accent-primary text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(255,180,0,0.25)] active:scale-[0.97]"
               >
-                <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-3xl overflow-hidden border border-white/[0.06] shadow-2xl">
-                  <Image
-                    src="/assets/mind-project.png"
-                    alt="Gabriele Forestieri — Mind Project"
-                    fill
-                    sizes="(max-width: 1024px) 0vw, 40vw"
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/10 to-transparent" />
-                </div>
-              </motion.div>
-            </div>
+                Inizia il Tuo Percorso
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/login"
+                className="inline-flex items-center justify-center gap-2 bg-white/[0.04] border border-white/[0.08] px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 hover:bg-white/[0.08] active:scale-[0.97]"
+              >
+                Accedi all&apos;Area Riservata
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              className="flex flex-wrap gap-2 mt-8 sm:mt-10 justify-center"
+            >
+              {['Mindset', 'Disciplina', 'Abitudini', 'Obiettivi'].map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-gray-400"
+                >
+                  {tag}
+                </span>
+              ))}
+            </motion.div>
           </div>
         </section>
 
