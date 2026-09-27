@@ -13,6 +13,7 @@ export default function Document() {
         />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="google-site-verification" content="googlea6268f8bf7c70352.html" />
         <meta name="theme-color" content="#050505" />
         <meta name="color-scheme" content="dark" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
