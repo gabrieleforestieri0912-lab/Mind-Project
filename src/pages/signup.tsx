@@ -59,7 +59,8 @@ export default function Signup() {
       setGoogleLoading(false);
       return;
     }
-    const redirectTo = `${window.location.origin}/auth/callback`;
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mind-prjct.vercel.app';
+    const redirectTo = `${siteUrl}/auth/callback`;
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: { redirectTo },
