@@ -105,8 +105,8 @@ export default function BusinessProtocol() {
   return (
     <>
       <SEO
-        title="Business Protocol - Monetizza la tua Passione"
-        description="Monetizza la tua passione attraverso il Personal Brand e scappa dal sistema. Blueprint per recuperare il tuo investimento entro 90 giorni. A partire da 497€/6 mesi."
+        title="Business Protocol: Personal Brand"
+        description="Monetizza la tua passione con il Personal Brand. Blueprint per recuperare l'investimento entro 90 giorni. Da 497€/6 mesi."
         canonicalUrl="https://mind-prjct.vercel.app/services/business-protocol"
         keywords={['business protocol', 'personal brand', 'monetizzare la passione', 'business online', 'community whatsapp']}
         jsonLd={[productJsonLd, breadcrumbJsonLd]}

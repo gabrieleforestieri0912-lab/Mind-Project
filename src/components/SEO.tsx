@@ -86,8 +86,13 @@ export default function SEO({
   modifiedTime,
   noIndex,
 }: SEOProps) {
-  const siteTitle = 'Gabriele Forestieri | Coaching Online & Mindset';
-  const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+  const siteTitle = 'Mind Project | Coaching Online';
+  const normalizedTitle = title?.trim() ?? '';
+  const fullTitle = !normalizedTitle
+    ? siteTitle
+    : normalizedTitle.toLowerCase().includes('mind project')
+      ? normalizedTitle
+      : `${normalizedTitle} | Mind Project`;
 
   const defaultDescription =
     "Coaching strategico e percorsi di mindset per diventare la miglior versione di te stesso attraverso l'eccellenza mentale.";
@@ -103,14 +108,21 @@ export default function SEO({
     'Gabriele Forestieri',
     'Mind Project',
     'disciplina',
-    'mentalità',
     'successo',
     'sviluppo personale',
-    'abitudini atomiche',
   ];
-  const pageKeywords = keywords
-    ? [...keywords, ...defaultKeywords].join(', ')
-    : defaultKeywords.join(', ');
+  const seenKeywords = new Set<string>();
+  const dedupeKeywords = (list: string[]): string[] => {
+    const out: string[] = [];
+    for (const raw of list) {
+      const key = raw.trim().toLowerCase();
+      if (!key || seenKeywords.has(key)) continue;
+      seenKeywords.add(key);
+      out.push(raw.trim());
+    }
+    return out;
+  };
+  const pageKeywords = dedupeKeywords([...(keywords ?? []), ...defaultKeywords]).join(', ');
 
   const structuredData = jsonLd
     ? Array.isArray(jsonLd)

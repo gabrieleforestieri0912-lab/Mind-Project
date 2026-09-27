@@ -117,8 +117,8 @@ export default function MindProjectVip() {
   return (
     <>
       <SEO
-        title="Mind Project VIP - L'Elite del Mindset"
-        description="Accesso esclusivo al programma Mind Project con coaching 1-a-1, supporto 24/7, live esclusive e SOS CALL. Il livello definitivo di Mind Project, a partire da 197€/3 mesi."
+        title="Mind Project VIP: Coaching 1-a-1 Elite"
+        description="Il livello definitivo Mind Project con coaching 1-a-1, supporto 24/7, live esclusive e SOS CALL. Da 197€/3 mesi."
         canonicalUrl="https://mind-prjct.vercel.app/services/mind-project-vip"
         keywords={['Mind Project VIP', 'coaching 1 a 1', 'coaching privato', 'supporto 24/7', 'mindset esclusivo', 'programma elite']}
         jsonLd={[productJsonLd, breadcrumbJsonLd]}

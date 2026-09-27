@@ -88,8 +88,8 @@ export default function MindProjectBase() {
   return (
     <>
       <SEO
-        title="Mind Project Base - Rivoluziona il tuo Mindset"
-        description="Il percorso base di Mind Project: videochiamate settimanali di gruppo, community esclusiva e un metodo testato per eliminare le dipendenze, superare le paure e raggiungere i tuoi obiettivi. A partire da 37€/mese."
+        title="Mind Project Base: Mindset e Disciplina"
+        description="Il percorso base Mind Project: videochiamate settimanali di gruppo, community esclusiva e un metodo per eliminare dipendenze e superare le paure. Da 37€/mese."
         canonicalUrl="https://mind-prjct.vercel.app/services/mind-project"
         keywords={['Mind Project base', 'percorso mindset', 'coaching online', 'crescita personale', 'community esclusiva', 'eliminare dipendenze']}
         jsonLd={[productJsonLd, breadcrumbJsonLd]}

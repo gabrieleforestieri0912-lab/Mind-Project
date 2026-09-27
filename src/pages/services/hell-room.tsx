@@ -44,8 +44,8 @@ export default function HellRoom() {
   return (
     <>
       <SEO
-        title="Hell Room - Mind Project"
-        description="L'intensivo di 90 giorni di Mind Project per costruire una mentalità dura e impenetrabile. Iscrizioni attualmente chiuse."
+        title="Hell Room: Intensivo 90 Giorni"
+        description="L'intensivo di 90 giorni Mind Project per una mentalità dura e impenetrabile. Iscrizioni chiuse."
         canonicalUrl="https://mind-prjct.vercel.app/services/hell-room"
         keywords={['hell room', 'mentalità dura', 'challenge 90 giorni', 'disciplina', 'mindset intenso']}
         noIndex

@@ -178,7 +178,7 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Mind Project — Rivoluziona il tuo Mindset"
+        title="Mind Project — Coaching Mindset Online"
         description="Mind Project è il programma di coaching online di Gabriele Forestieri: supera le paure, elimina le dipendenze, sviluppa disciplina e raggiungi i tuoi obiettivi con un metodo basato su neuroscienze e abitudini atomiche."
         canonicalUrl="https://mind-prjct.vercel.app/"
         keywords={['mindset', 'crescita personale', 'coaching online', 'disciplina', 'obiettivi', 'mentalità', 'abitudini atomiche', 'Gabriele Forestieri']}

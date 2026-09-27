@@ -86,8 +86,8 @@ export default function ServicesOverview() {
   return (
     <>
       <SEO
-        title="I Nostri Percorsi - Mind Project"
-        description="Scopri i percorsi di Mind Project: Mind Project Base, Mind Project VIP con coaching 1-a-1 e Business Protocol per aziende. Scegli il piano giusto per raggiungere i tuoi obiettivi."
+        title="Percorsi di Coaching | Mind Project"
+        description="Scopri i percorsi Mind Project: Base, VIP con coaching 1-a-1 e Business Protocol. Scegli il piano giusto per i tuoi obiettivi."
         canonicalUrl="https://mind-prjct.vercel.app/services"
         keywords={['percorsi coaching', 'Mind Project base', 'Mind Project VIP', 'Business Protocol', 'coaching online']}
         jsonLd={[breadcrumbJsonLd]}
