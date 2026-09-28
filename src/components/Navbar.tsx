@@ -118,7 +118,7 @@ const navLinks = [
 // per non occupare la barra di navigazione con link che per un visitatore
 // anonimo porterebbero comunque al login (rotte protette in src/proxy.ts).
 const membersLinks = [
-  { name: 'Videocorso', href: '/academy/mind-project', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Il Mio Percorso', href: '/academy/mind-project', icon: <BookOpen className="w-4 h-4" /> },
   { name: 'Chiamate Registrate', href: '/mind-project/chiamate', icon: <PhoneCall className="w-4 h-4" /> },
 ];
 

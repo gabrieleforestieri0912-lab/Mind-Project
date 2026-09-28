@@ -2,9 +2,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import SEO from '@/components/SEO';
+import ChallengeTracker from '@/components/ChallengeTracker';
 import { motion } from 'framer-motion';
 import {
-  Lock,
+  Flame,
   Play,
   CheckCircle2,
   Clock,
@@ -56,12 +57,15 @@ const MODULES = [
   },
 ];
 
+type AcademyTab = 'corso' | 'sfida';
+
 export default function AcademyMindProject() {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [loading, setLoading] = useState(true);
   const [currentLesson, setCurrentLesson] = useState<string | null>(null);
   const [completedLessons, setCompletedLessons] = useState<string[]>([]);
   const [expandedModule, setExpandedModule] = useState('fondamenti');
+  const [activeTab, setActiveTab] = useState<AcademyTab>('corso');
   const router = useRouter();
 
   useEffect(() => {
@@ -108,8 +112,8 @@ export default function AcademyMindProject() {
 
   const pageSeo = (
     <SEO
-      title="Il Mio Video Corso"
-      description="Accedi al videocorso esclusivo Mind Project. Segui le lezioni, traccia i tuoi progressi e diventa la persona che ammiri."
+      title="Il Mio Percorso"
+      description="L'area riservata Mind Project: il videocorso su mindset e disciplina e la Sfida 30 Giorni per consolidare le abitudini."
       canonicalUrl="https://mind-prjct.vercel.app/academy/mind-project"
       noIndex
     />
@@ -153,20 +157,63 @@ export default function AcademyMindProject() {
             className="mb-10"
           >
             <div className="flex items-center gap-2 text-accent-primary mb-4">
-              <Brain className="w-5 h-5" />
+              {activeTab === 'corso' ? (
+                <Brain className="w-5 h-5" />
+              ) : (
+                <Flame className="w-5 h-5" />
+              )}
               <span className="text-[10px] font-black uppercase tracking-[0.2em]">
                 Area Riservata
               </span>
             </div>
             <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-black italic uppercase tracking-tight leading-[1] mb-4">
-              Il Tuo <span className="gradient-text">Video Corso</span>
+              {activeTab === 'corso' ? (
+                <>
+                  Il Tuo <span className="gradient-text">Video Corso</span>
+                </>
+              ) : (
+                <>
+                  Sfida <span className="gradient-text">30 Giorni</span>
+                </>
+              )}
             </h1>
             <p className="text-gray-500 text-base sm:text-lg max-w-xl">
-              Segui le lezioni al tuo ritmo. Ogni modulo è progettato per portarti un passo più vicino alla versione migliore di te stesso.
+              {activeTab === 'corso'
+                ? 'Segui le lezioni al tuo ritmo. Ogni modulo è progettato per portarti un passo più vicino alla versione migliore di te stesso.'
+                : 'Segna ogni giorno in cui completi la tua azione chiave: 30 giorni per trasformare una scelta in una parte di te.'}
             </p>
           </motion.div>
 
+          {/* Tabs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.05 }}
+            className="inline-flex gap-1 p-1 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-10"
+          >
+            {(
+              [
+                { id: 'corso', label: 'Video Corso', icon: <Play className="w-3.5 h-3.5" /> },
+                { id: 'sfida', label: 'Sfida 30 Giorni', icon: <Flame className="w-3.5 h-3.5" /> },
+              ] as const
+            ).map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-wider transition-all duration-300 ${
+                  activeTab === tab.id
+                    ? 'bg-accent-primary text-black'
+                    : 'text-gray-500 hover:text-white'
+                }`}
+              >
+                {tab.icon}
+                {tab.label}
+              </button>
+            ))}
+          </motion.div>
+
           {/* Progress */}
+          {activeTab === 'corso' && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -191,7 +238,9 @@ export default function AcademyMindProject() {
               />
             </div>
           </motion.div>
+          )}
 
+          {activeTab === 'corso' && (
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Sidebar - Module List */}
             <div className="lg:col-span-1 order-2 lg:order-1 space-y-3">
@@ -329,6 +378,9 @@ export default function AcademyMindProject() {
               )}
             </div>
           </div>
+          )}
+
+          {activeTab === 'sfida' && <ChallengeTracker />}
         </div>
       </main>
     </>
