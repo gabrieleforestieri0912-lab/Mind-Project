@@ -28,6 +28,7 @@ export default function TestimonialCarousel({ slides }: TestimonialCarouselProps
   const [direction, setDirection] = useState(1);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const goTo = useCallback(
     (next: number) => {
@@ -64,6 +65,15 @@ export default function TestimonialCarousel({ slides }: TestimonialCarouselProps
   useEffect(() => {
     setIsAutoPlaying(true);
   }, []);
+
+  // Auto-play video when slide changes
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Auto-play might be blocked by browser, that's fine
+      });
+    }
+  }, [index]);
 
   // Pause auto-play on user interaction
   const handleUserInteraction = () => {
@@ -114,9 +124,12 @@ export default function TestimonialCarousel({ slides }: TestimonialCarouselProps
                 className="absolute inset-0"
               >
                 <video
+                  ref={videoRef}
                   key={current.src}
                   controls
+                  autoPlay
                   playsInline
+                  muted
                   // Non scaricare nulla finche l'utente non preme play: i file
                   // pesano decine di MB e l'auto-download azzererebbe le Core
                   // Web Vitals della home, soprattutto da mobile.
