@@ -25,8 +25,8 @@ export default function Footer() {
             </Link>
             <p className="text-gray-500 text-sm max-w-md leading-relaxed mb-5 sm:mb-6">
               Trasforma la tua vita attraverso la mentalità e le azioni.
-              Coaching online e programmi di Calisthenics per la tua miglior
-              versione.
+              Coaching online di mindset per trasformare la tua vita:
+              percorsi di business e mentalità per la tua migliore versione.
             </p>
             <div className="flex gap-2">
               {['instagram', 'youtube', 'tiktok'].map((social) => (

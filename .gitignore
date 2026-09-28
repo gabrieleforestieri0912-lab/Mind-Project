@@ -16,3 +16,9 @@ coverage/
 tsconfig.tsbuildinfo
 
 .vercel
+
+# Video testimonianze dei clienti: file pesanti (~360 MB) che NON devono
+# entrare nel repository. Git conserverebbe i blob per sempre nella cronologia
+# anche se venissero poi rimossi. Caricarli fuori dal repo (es. storage
+# esterno / CDN) e referenziarli da lì.
+public/feedback/*.mp4
