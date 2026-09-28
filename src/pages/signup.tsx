@@ -118,7 +118,7 @@ export default function Signup() {
         canonicalUrl="https://mind-prjct.vercel.app/signup"
       />
       <main className="min-h-screen grid lg:grid-cols-2">
-        <div className="hidden lg:flex relative bg-[#080808] items-start justify-center pt-0 pb-8 px-8 overflow-hidden">
+        <div className="hidden lg:flex order-2 relative bg-[#080808] items-start justify-center pt-0 pb-8 px-8 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/[0.08] to-transparent z-0" />
           <div className="absolute top-[-5%] right-[-5%] w-[250px] h-[250px] bg-accent-primary/[0.03] blur-[60px] rounded-full" />
           <div className="absolute bottom-[-5%] left-[-5%] w-[180px] h-[180px] bg-accent-primary/[0.02] blur-[80px] rounded-full" />
@@ -161,7 +161,7 @@ export default function Signup() {
           </motion.div>
         </div>
 
-        <div className="flex items-start justify-center pt-0 pb-4 px-4 sm:pt-0 sm:pb-8 sm:px-8 lg:pt-0 lg:pb-16 lg:px-16 bg-[#050505] relative">
+        <div className="order-1 flex items-start justify-center pt-0 pb-4 px-4 sm:pt-0 sm:pb-8 sm:px-8 lg:pt-0 lg:pb-16 lg:px-16 bg-[#050505] relative">
           <div className="lg:hidden absolute top-5 left-5">
             <Link
               href="/"
@@ -172,7 +172,7 @@ export default function Signup() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full max-w-md mt-20 lg:mt-24"

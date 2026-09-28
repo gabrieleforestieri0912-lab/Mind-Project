@@ -102,7 +102,7 @@ export default function Login() {
         noIndex
       />
       <main className="min-h-screen grid lg:grid-cols-2">
-        <div className="hidden lg:flex relative bg-[#080808] items-center justify-center px-12 overflow-hidden">
+        <div className="hidden lg:flex order-2 relative bg-[#080808] items-center justify-center px-12 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary/[0.08] to-transparent z-0" />
           <div className="absolute bottom-[-5%] left-[-5%] w-[250px] h-[250px] bg-accent-primary/[0.03] blur-[60px] rounded-full" />
           <div className="absolute top-[-5%] right-[-5%] w-[180px] h-[180px] bg-accent-primary/[0.02] blur-[80px] rounded-full" />
@@ -151,7 +151,7 @@ export default function Login() {
           </motion.div>
         </div>
 
-        <div className="flex items-center justify-center px-4 py-10 sm:px-8 lg:px-16 bg-[#050505] relative min-h-screen lg:min-h-full">
+        <div className="order-1 flex items-center justify-center px-4 py-10 sm:px-8 lg:px-16 bg-[#050505] relative min-h-screen lg:min-h-full">
           <div className="lg:hidden absolute top-5 left-5">
             <Link
               href="/"
