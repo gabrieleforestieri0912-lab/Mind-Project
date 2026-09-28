@@ -29,7 +29,7 @@ interface NavUser {
 }
 
 export default function Navbar() {
-  const { session: supabaseSession, signOut: supabaseSignOut } = useSupabaseAuth();
+  const { session: supabaseSession, signOut: supabaseSignOut, isLoading: authLoading } = useSupabaseAuth();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState<NavUser | null>(null);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
@@ -116,7 +116,7 @@ const navLinks = [
 
 // Contenuto riservato agli utenti loggati: raggruppato in un menu a scomparsa
 // per non occupare la barra di navigazione con link che per un visitatore
-// anonimo porterebbero comunque al login (rotte protette in src/proxy.ts).
+// anonimo porterebbero comunque al login (rotte protette in middleware.ts).
 const membersLinks = [
   { name: 'Il Mio Percorso', href: '/academy/mind-project', icon: <BookOpen className="w-4 h-4" /> },
   { name: 'Chiamate Registrate', href: '/mind-project/chiamate', icon: <PhoneCall className="w-4 h-4" /> },
@@ -211,7 +211,7 @@ const membersLinks = [
             </div>
 
             <div className="flex items-center gap-2">
-              {!isLoggedIn ? (
+              {!authLoading && !isLoggedIn ? (
                 <Link
                   href="/login"
                   className="hidden sm:flex items-center gap-1.5 bg-accent-primary text-black px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider hover:shadow-[0_0_15px_rgba(255,180,0,0.3)] transition-all duration-300 hover:scale-105 active:scale-95"
@@ -373,7 +373,7 @@ const membersLinks = [
 
               <div className="mt-auto space-y-3">
                 <div className="h-px bg-white/[0.06]" />
-                {!isLoggedIn ? (
+                {!authLoading && !isLoggedIn ? (
                   <Link
                     href="/login"
                     onClick={() => setShowMobileMenu(false)}

@@ -1,4 +1,4 @@
-// Paths guarded by src/proxy.ts: anonymous visitors are redirected to /login
+// Paths guarded by middleware.ts: anonymous visitors are redirected to /login
 // (which is noindex). Redirected URLs must never be listed in a sitemap, so
 // they are excluded here.
 //
