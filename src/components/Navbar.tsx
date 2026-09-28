@@ -14,10 +14,8 @@ import {
   LogOut,
   Menu,
   X,
-  Flame,
   HelpCircle,
   Brain,
-  Lock,
   ChevronDown,
   BookOpen,
   PhoneCall,
@@ -104,23 +102,17 @@ const navLinks = [
     href: '/services',
     icon: <Dumbbell className="w-4 h-4" />,
   },
-    {
-      name: 'Sfida 30',
-      href: '/habit/challenge',
-      icon: <Flame className="w-4 h-4" />,
-      reserved: true,
-    },
-    {
-      name: 'FAQ',
-      href: '/#faq',
-      icon: <HelpCircle className="w-4 h-4" />,
-    },
-    {
-      name: 'Contatti',
-      href: '/contacts',
-      icon: <Mail className="w-4 h-4" />,
-    },
-  ];
+  {
+    name: 'FAQ',
+    href: '/#faq',
+    icon: <HelpCircle className="w-4 h-4" />,
+  },
+  {
+    name: 'Contatti',
+    href: '/contacts',
+    icon: <Mail className="w-4 h-4" />,
+  },
+];
 
 // Contenuto riservato agli utenti loggati: raggruppato in un menu a scomparsa
 // per non occupare la barra di navigazione con link che per un visitatore
@@ -174,12 +166,6 @@ const membersLinks = [
                   >
                     {link.icon}
                     {link.name}
-                    {link.reserved && !isLoggedIn && (
-                      <Lock
-                        className="w-3 h-3 text-gray-600 group-hover:text-accent-primary transition-colors"
-                        aria-label="Area riservata agli iscritti"
-                      />
-                    )}
                     {router.pathname === link.href && (
                       <motion.div
                         layoutId="activeNav"
@@ -357,9 +343,6 @@ const membersLinks = [
                         0{idx + 1}
                       </span>
                       {link.name}
-                      {link.reserved && !isLoggedIn && (
-                        <Lock className="w-4 h-4 text-gray-600" aria-label="Area riservata agli iscritti" />
-                      )}
                     </Link>
                   </motion.li>
                 ))}

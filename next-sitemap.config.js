@@ -12,7 +12,6 @@ const PRIVATE_PATHS = [
   '/settings',
   '/academy/*',
   '/mind-project/*',
-  '/habit/*',
   '/payment/*',
 ];
 

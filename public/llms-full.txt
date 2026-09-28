@@ -26,7 +26,7 @@ Il percorso prevede 4 fasi: Diagnosi (analisi dello stato attuale), Reset (elimi
 
 ### 1. Mind Project (percorso base)
 - Prezzo: 27€/mese oppure 297€/anno (risparmia il 10%)
-- Include: videochiamata settimanale di gruppo, gruppo privato, video corso sulla mentalità
+- Include: videochiamata settimanale di gruppo, gruppo privato, video corso sulla mentalità, Sfida 30 Giorni
 - Caratteristiche: eliminazione delle dipendenze, implementazione di buone abitudini, superamento delle paure e delle insicurezze, allineamento delle azioni allo scopo, raggiungimento degli obiettivi
 - Pagina: https://mind-prjct.vercel.app/services/mind-project
 
@@ -44,7 +44,7 @@ Il percorso prevede 4 fasi: Diagnosi (analisi dello stato attuale), Reset (elimi
 
 ## Sfida 30 Giorni
 
-Sfida gratuita di 30 giorni disponibile per gli utenti registrati per costruire e consolidare abitudini vincenti, con tracciamento giornaliero del progresso. Pagina: https://mind-prjct.vercel.app/habit/challenge
+La Sfida 30 Giorni è inclusa nel percorso base Mind Project e non è un prodotto a sé stante: accompagna gli iscritti a costruire e consolidare abitudini vincenti, con tracciamento giornaliero del progresso.
 
 ## Video corso e chiamate registrate
 
@@ -83,7 +83,6 @@ No, il programma è progettato per funzionare a qualsiasi livello. I contenuti g
 - Mind Project Base: https://mind-prjct.vercel.app/services/mind-project
 - Mind Project VIP: https://mind-prjct.vercel.app/services/mind-project-vip
 - Business Protocol: https://mind-prjct.vercel.app/services/business-protocol
-- Sfida 30 Giorni: https://mind-prjct.vercel.app/habit/challenge
 - Chiamate Registrate: https://mind-prjct.vercel.app/mind-project/chiamate
 - Video corso (area riservata): https://mind-prjct.vercel.app/academy/mind-project
 - Contatti: https://mind-prjct.vercel.app/contacts

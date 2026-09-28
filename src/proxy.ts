@@ -6,7 +6,6 @@ const protectedPaths = [
   '/settings',
   '/academy',
   '/mind-project',
-  '/habit/challenge',
   '/payment/checkout',
 ];
 

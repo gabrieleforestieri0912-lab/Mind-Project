@@ -11,6 +11,7 @@ const features = [
   'Crea quella persona che ammiri e rispetti',
   'Cambia il tuo ambiente con il gruppo privato di Mind Project',
   'Elimina le dipendenze e implementa buone abitudini',
+  'Consolida le nuove abitudini con la Sfida 30 Giorni',
   'Rompi credenze limitanti e supera le tue paure',
   "Supera l'insicurezza e la paura del giudizio altrui",
   'Allinea le tue azioni con il tuo scopo',

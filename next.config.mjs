@@ -11,6 +11,13 @@ const nextConfig = {
         destination: '/privacy-policy',
         permanent: true,
       },
+      {
+        // The 30-day challenge is a feature of the base plan, not a standalone
+        // section: its page and navbar entry were removed.
+        source: '/habit/challenge',
+        destination: '/services/mind-project',
+        permanent: true,
+      },
     ];
   },
   images: {

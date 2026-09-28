@@ -23,7 +23,7 @@ Diventa la Persona che Ammiri — Mind Project, coaching online e mindset
 
 ## Summary
 
-Mind Project (mind-prjct.vercel.app) è il programma di coaching online e mindset di Gabriele Forestieri. Il sito propone percorsi strutturati di crescita personale — Mind Project, Mind Project VIP e Business Protocol — basati su un metodo testato che integra neuroscienze, psicologia comportamentale e abitudini atomiche. Gli utenti accedono a video lezioni on-demand, chiamate di gruppo settimanali, esercizi pratici e una community esclusiva. È prevista una sfida gratuita di 30 giorni ("Sfida 30") per costruire abitudini. I piani sono venduti in abbonamento mensile o annuale con pagamenti sicuri via Stripe, con cancellazione in qualsiasi momento.
+Mind Project (mind-prjct.vercel.app) è il programma di coaching online e mindset di Gabriele Forestieri. Il sito propone percorsi strutturati di crescita personale — Mind Project, Mind Project VIP e Business Protocol — basati su un metodo testato che integra neuroscienze, psicologia comportamentale e abitudini atomiche. Gli utenti accedono a video lezioni on-demand, chiamate di gruppo settimanali, esercizi pratici e una community esclusiva. Il percorso base include inoltre la Sfida 30 Giorni, per costruire e consolidare abitudini vincenti. I piani sono venduti in abbonamento mensile o annuale con pagamenti sicuri via Stripe, con cancellazione in qualsiasi momento.
 
 ## Contact
 
@@ -37,7 +37,6 @@ Mind Project (mind-prjct.vercel.app) è il programma di coaching online e mindse
 - [Mind Project Base](https://mind-prjct.vercel.app/services/mind-project): Percorso base a partire da 27€/mese.
 - [Mind Project VIP](https://mind-prjct.vercel.app/services/mind-project-vip): Coaching 1-a-1, supporto 24/7, a partire da 197€/3 mesi.
 - [Business Protocol](https://mind-prjct.vercel.app/services/business-protocol): Ottimizzazione aziendale, a partire da 29€/mese.
-- [Sfida 30 Giorni](https://mind-prjct.vercel.app/habit/challenge): Sfida gratuita di 30 giorni per costruire abitudini.
 - [Chiamate Registrate](https://mind-prjct.vercel.app/mind-project/chiamate): Playlist delle sessioni di coaching registrate.
 - [Contatti](https://mind-prjct.vercel.app/contacts): Per domande sui programmi, risposta entro 24 ore.
 - [FAQ](https://mind-prjct.vercel.app/#faq): Domande frequenti sul programma e sui pagamenti.
