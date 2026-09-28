@@ -8,10 +8,9 @@ import { Shield } from 'lucide-react';
 import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ||
-  'pk_test_51Rx1kF9ddZe187yvLIgFVDz4nJD7tgGtvMmKr8tBoCorCSIWXSyMmUKM0avNuRxdel79iJAS5hANx9azHYB3m0Gv001vbr2N4x'
-);
+const stripePromise = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  ? loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+  : null;
 
 export default function CheckoutPage() {
   const [clientSecret, setClientSecret] = useState('');
@@ -19,6 +18,7 @@ export default function CheckoutPage() {
   const [service, setService] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
+  const stripeKeyMissing = !stripePromise;
 
   useEffect(() => {
     const isLoggedInCheck = localStorage.getItem('isLoggedIn') === 'true';
@@ -101,7 +101,12 @@ export default function CheckoutPage() {
         </div>
 
         <div className="bg-white/[0.02] border border-accent-primary/10 p-4 sm:p-5 md:p-6 rounded-xl shadow-[0_0_25px_rgba(255,180,0,0.03)] backdrop-blur-sm">
-          {clientSecret ? (
+          {stripeKeyMissing ? (
+            <p className="py-8 text-center text-sm text-red-400 font-bold uppercase tracking-widest">
+              Pagamenti non disponibili: chiave Stripe non configurata
+              (NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+            </p>
+          ) : clientSecret ? (
             <Elements
               stripe={stripePromise}
               options={{ clientSecret, appearance: { theme: 'night' } }}
