@@ -489,8 +489,8 @@ export default function HomePage() {
                 },
                 {
                   icon: Zap,
-                  title: 'Abitudini Atomiche',
-                  desc: 'Implementiamo micro-abitudini quotidiane che si accumulano in risultati straordinari. Non serve rivoluzionare la tua vita in un giorno. Bastano piccoli cambiamenti consistenti nel tempo.',
+                  title: 'Abitudini Non Negoziabili',
+                  desc: 'Scegli le abitudini che non puoi più permetterti di saltare e rendile non negoziabili, giorno dopo giorno. Non serve rivoluzionare la tua vita in un giorno: servono piccoli cambiamenti, ma ripetuti ogni singolo giorno.',
                   gradient: 'from-accent-primary/10 to-amber-500/5',
                   border: 'hover:border-accent-primary/30',
                   iconGradient: 'from-accent-primary to-amber-400',
