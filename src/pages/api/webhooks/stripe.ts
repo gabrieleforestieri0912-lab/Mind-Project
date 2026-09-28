@@ -2,9 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import { supabaseAdmin } from '@/lib/supabase-admin';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-03-31' as Stripe.LatestApiVersion,
-});
+// Non forzare apiVersion: vedi nota in create-payment-intent.ts.
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export const config = {
   api: {

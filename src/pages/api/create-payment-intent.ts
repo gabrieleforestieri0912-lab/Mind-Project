@@ -2,9 +2,10 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import { getSession } from '@/lib/supabase-server';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-03-31' as Stripe.LatestApiVersion,
-});
+// Non forzare apiVersion: la libreria stripe la pinnera' sulla versione che
+// supporta davvero (con 15.x = 2024-04-10). Forzare '2025-03-31' faceva fallire
+// ogni chiamata con "Invalid Stripe API version".
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 const PRICING_CATALOG: Record<string, Record<string, number>> = {
   'MIND PROJECT': {
