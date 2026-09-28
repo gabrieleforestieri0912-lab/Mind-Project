@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Rocket, CheckCircle2, Users, Target, Crown, Gift, ArrowRight, Brain } from 'lucide-react';
 import React from 'react';
 import SEO from '@/components/SEO';
+import { BUSINESS_PROTOCOL_PLANS } from '@/lib/pricing';
 
 const features = [
   { icon: Rocket, text: 'Monetizza la tua passione con il Personal Brand' },
@@ -32,29 +33,7 @@ const bonuses = [
   'Strategia iniziale videochiamata 1:1',
 ];
 
-const plans = [
-  {
-    name: 'Semestrale',
-    price: '497€',
-    priceValue: 497,
-    duration: '/6 mesi',
-    highlight: false,
-    cta: 'Inizia Ora',
-    service: 'BUSINESS PROTOCOL',
-    plan: 'Semestrale',
-  },
-  {
-    name: 'Annuale',
-    price: '897€',
-    priceValue: 897,
-    duration: '/anno',
-    highlight: true,
-    badge: 'La Scelta dei Vincitori',
-    cta: 'Accedi al Percorso',
-    service: 'BUSINESS PROTOCOL',
-    plan: 'Annuale',
-  },
-];
+const plans = BUSINESS_PROTOCOL_PLANS;
 
 export default function BusinessProtocol() {
   const productJsonLd = {

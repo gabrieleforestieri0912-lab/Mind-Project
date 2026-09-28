@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ChevronRight, Star, Target, Briefcase, Flame, Lock } from 'lucide-react';
 import React from 'react';
 import SEO from '@/components/SEO';
+import { ENTRY_PRICE, HELL_ROOM_PRICE, SERVICE_KEYS } from '@/lib/pricing';
 
 const paths = [
   {
@@ -18,6 +19,7 @@ const paths = [
     borderHover: 'hover:border-amber-500/30',
     iconGradient: 'from-amber-500 to-yellow-400',
     tagColor: 'text-amber-400',
+    entryPrice: ENTRY_PRICE[SERVICE_KEYS.mindProject],
   },
   {
     id: 'mind-project-vip',
@@ -31,6 +33,7 @@ const paths = [
     borderHover: 'hover:border-purple-500/30',
     iconGradient: 'from-purple-500 to-fuchsia-400',
     tagColor: 'text-purple-400',
+    entryPrice: ENTRY_PRICE[SERVICE_KEYS.mindProjectVip],
   },
   {
     id: 'business-protocol',
@@ -44,6 +47,7 @@ const paths = [
     borderHover: 'hover:border-sky-500/30',
     iconGradient: 'from-sky-500 to-blue-400',
     tagColor: 'text-sky-400',
+    entryPrice: ENTRY_PRICE[SERVICE_KEYS.businessProtocol],
   },
   {
     id: 'hell-room',
@@ -58,6 +62,7 @@ const paths = [
     iconGradient: 'from-red-500 to-orange-400',
     tagColor: 'text-red-400',
     paymentDisabled: true,
+    entryPrice: HELL_ROOM_PRICE,
   },
 ];
 
@@ -157,9 +162,23 @@ export default function ServicesOverview() {
                     <h2 className="text-xl sm:text-2xl font-black italic uppercase tracking-tight mb-3 transition-colors text-white">
                       {path.name}
                     </h2>
-                    <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-6 flex-grow">
+                    <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-5 flex-grow">
                       {path.description}
                     </p>
+
+                    <div className="mb-6 pb-5 border-b border-white/[0.06]">
+                      <span className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-500 block mb-1">
+                        {path.paymentDisabled ? 'Prezzo' : 'A partire da'}
+                      </span>
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-2xl sm:text-3xl font-black italic text-white">
+                          {path.entryPrice.price}
+                        </span>
+                        <span className="text-xs sm:text-sm font-bold text-gray-500">
+                          {path.entryPrice.duration}
+                        </span>
+                      </div>
+                    </div>
 
                     {path.paymentDisabled ? (
                       <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-500">

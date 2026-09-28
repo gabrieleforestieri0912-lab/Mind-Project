@@ -1,26 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import { getSession } from '@/lib/supabase-server';
+import { PRICING_CATALOG } from '@/lib/pricing';
 
 // Non forzare apiVersion: la libreria stripe la pinnera' sulla versione che
 // supporta davvero (con 15.x = 2024-04-10). Forzare '2025-03-31' faceva fallire
 // ogni chiamata con "Invalid Stripe API version".
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-
-const PRICING_CATALOG: Record<string, Record<string, number>> = {
-  'MIND PROJECT': {
-    Mensile: 37,
-  },
-  'MIND PROJECT VIP': {
-    Trimestrale: 197,
-    Semestrale: 397,
-    Annuale: 697,
-  },
-  'BUSINESS PROTOCOL': {
-    Semestrale: 497,
-    Annuale: 897,
-  },
-};
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });

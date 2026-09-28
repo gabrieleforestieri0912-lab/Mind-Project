@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ChevronRight, Target, Star, Briefcase, CheckCircle2, Shield, ArrowDown, Quote, ArrowRight, Flame, Brain, Zap, BookOpen, GraduationCap } from 'lucide-react';
 import React, { useState } from 'react';
 import SEO from '@/components/SEO';
+import { ENTRY_PRICE, SERVICE_KEYS } from '@/lib/pricing';
 
 const services = [
   {
@@ -16,6 +17,7 @@ const services = [
     gradient: 'from-amber-500 to-yellow-400',
     bgGradient: 'from-amber-500/10 to-yellow-500/5',
     borderHover: 'hover:border-amber-500/30',
+    entryPrice: ENTRY_PRICE[SERVICE_KEYS.mindProject],
   },
   {
     id: 'mind-project-vip',
@@ -27,6 +29,7 @@ const services = [
     gradient: 'from-purple-500 to-fuchsia-400',
     bgGradient: 'from-purple-500/10 to-violet-500/5',
     borderHover: 'hover:border-purple-500/30',
+    entryPrice: ENTRY_PRICE[SERVICE_KEYS.mindProjectVip],
   },
   {
     id: 'business-protocol',
@@ -35,9 +38,10 @@ const services = [
     desc: 'Monetizza la tua passione attraverso il Personal Brand e scappa dal sistema.',
     href: '/services/business-protocol',
     icon: Briefcase,
-    gradient: 'from-emerald-500 to-teal-400',
-    bgGradient: 'from-emerald-500/10 to-teal-500/5',
-    borderHover: 'hover:border-emerald-500/30',
+    gradient: 'from-sky-500 to-blue-400',
+    bgGradient: 'from-sky-500/10 to-blue-500/5',
+    borderHover: 'hover:border-sky-500/30',
+    entryPrice: ENTRY_PRICE[SERVICE_KEYS.businessProtocol],
   },
 ];
 
@@ -167,7 +171,7 @@ export default function HomePage() {
       inLanguage: 'it-IT',
       offers: {
         '@type': 'Offer',
-        price: '37',
+        price: '27',
         priceCurrency: 'EUR',
         availability: 'https://schema.org/InStock',
         url: 'https://mind-prjct.vercel.app/services/mind-project',
@@ -318,9 +322,22 @@ export default function HomePage() {
                       <h3 className="text-xl sm:text-2xl font-black italic uppercase tracking-tight mb-3 group-hover:text-accent-primary transition-colors">
                         {service.name}
                       </h3>
-                      <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-6">
+                      <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-5">
                         {service.desc}
                       </p>
+                      <div className="mb-6 pb-5 border-b border-white/[0.06]">
+                        <span className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-500 block mb-1">
+                          A partire da
+                        </span>
+                        <div className="flex items-baseline gap-1.5">
+                          <span className="text-2xl sm:text-3xl font-black italic">
+                            {service.entryPrice.price}
+                          </span>
+                          <span className="text-xs sm:text-sm font-bold text-gray-500">
+                            {service.entryPrice.duration}
+                          </span>
+                        </div>
+                      </div>
                       <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent-primary group-hover:gap-3 transition-all">
                         Scopri di più <ChevronRight className="w-3.5 h-3.5" />
                       </div>

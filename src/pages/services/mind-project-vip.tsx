@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Crown, CheckCircle2, Shield, Star, PhoneCall, Gift, ArrowRight } from 'lucide-react';
 import React from 'react';
 import SEO from '@/components/SEO';
+import { MIND_PROJECT_VIP_PLANS } from '@/lib/pricing';
 
 const features = [
   '1 Videochiamata strategica 1:1 con me per comprendere il tuo punto',
@@ -23,39 +24,7 @@ const vipBonuses = [
   'SOS CALL in caso di emergenza',
 ];
 
-const plans = [
-  {
-    name: 'Trimestrale',
-    price: '197€',
-    priceValue: 197,
-    duration: '/3 mesi',
-    highlight: false,
-    cta: 'Diventa VIP',
-    service: 'MIND PROJECT VIP',
-    plan: 'Trimestrale',
-  },
-  {
-    name: 'Semestrale',
-    price: '397€',
-    priceValue: 397,
-    duration: '/6 mesi',
-    highlight: false,
-    cta: 'Diventa VIP',
-    service: 'MIND PROJECT VIP',
-    plan: 'Semestrale',
-  },
-  {
-    name: 'Annuale',
-    price: '697€',
-    priceValue: 697,
-    duration: '/anno',
-    highlight: true,
-    badge: 'La Scelta dei Leader',
-    cta: 'Accedi al Massimo Livello',
-    service: 'MIND PROJECT VIP',
-    plan: 'Annuale',
-  },
-];
+const plans = MIND_PROJECT_VIP_PLANS;
 
 export default function MindProjectVip() {
   const productJsonLd = {

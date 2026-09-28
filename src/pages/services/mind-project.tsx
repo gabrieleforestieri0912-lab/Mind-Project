@@ -4,6 +4,7 @@ import { CheckCircle2, Shield, Zap, Target, Gift, ArrowRight } from 'lucide-reac
 import React from 'react';
 import Link from 'next/link';
 import SEO from '@/components/SEO';
+import { MIND_PROJECT_PLANS } from '@/lib/pricing';
 
 const features = [
   'Videochiamata di gruppo settimanale dal vivo con me',
@@ -15,36 +16,7 @@ const features = [
   'Allinea le tue azioni con il tuo scopo',
 ];
 
-const plans = [
-  {
-    name: 'Mensile',
-    price: '37€',
-    priceValue: 37,
-    duration: '/mese',
-    highlight: false,
-    cta: 'Inizia Ora',
-    service: 'MIND PROJECT',
-    plan: 'Mensile',
-    bonuses: ['Video corso mentalità per apprendere le basi'],
-  },
-  {
-    name: 'Annuale',
-    price: '397€',
-    priceValue: 397,
-    duration: '/anno',
-    highlight: false,
-    disabled: true,
-    badge: 'Offerta a tempo limitato',
-    cta: 'Non disponibile',
-    service: 'MIND PROJECT',
-    plan: 'Annuale',
-    bonuses: [
-      'Video corso mentalità per apprendere le basi',
-      'Videochiamata iniziale 1:1 con me',
-      'Accesso a tutte le Videochiamate Registrate (+20 ore)',
-    ],
-  },
-];
+const plans = MIND_PROJECT_PLANS;
 
 export default function MindProjectBase() {
   const productJsonLd = {
@@ -67,7 +39,7 @@ export default function MindProjectBase() {
       {
         '@type': 'Offer',
         name: 'Mind Project Mensile',
-        price: '37',
+        price: '27',
         priceCurrency: 'EUR',
         priceValidUntil: '2026-12-31',
         availability: 'https://schema.org/InStock',
@@ -89,7 +61,7 @@ export default function MindProjectBase() {
     <>
       <SEO
         title="Mind Project Base: Mindset e Disciplina"
-        description="Il percorso base Mind Project: videochiamate settimanali di gruppo, community esclusiva e un metodo per eliminare dipendenze e superare le paure. Da 37€/mese."
+        description="Il percorso base Mind Project: videochiamate settimanali di gruppo, community esclusiva e un metodo per eliminare dipendenze e superare le paure. Da 27€/mese."
         canonicalUrl="https://mind-prjct.vercel.app/services/mind-project"
         keywords={['Mind Project base', 'percorso mindset', 'coaching online', 'crescita personale', 'community esclusiva', 'eliminare dipendenze']}
         jsonLd={[productJsonLd, breadcrumbJsonLd]}
