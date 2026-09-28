@@ -51,7 +51,7 @@ const paths = [
     subtitle: 'Intensivo 90 Giorni',
     description: 'L\'intensivo più estremo di Mind Project per costruire una mentalità dura e impenetrabile in 90 giorni. Attualmente non disponibile.',
     href: '/services/hell-room',
-    image: '/assets/mind-project-vip.png',
+    image: '/assets/hell-room.png',
     icon: Flame,
     bgGradient: 'from-red-500/10 to-orange-500/5',
     borderHover: 'hover:border-red-500/30',
