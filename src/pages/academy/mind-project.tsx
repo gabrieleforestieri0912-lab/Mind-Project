@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Head from 'next/head';
+import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
 import {
   Lock,
@@ -106,23 +106,35 @@ export default function AcademyMindProject() {
   const completedCount = completedLessons.length;
   const progress = totalLessons > 0 ? (completedCount / totalLessons) * 100 : 0;
 
+  const pageSeo = (
+    <SEO
+      title="Il Mio Video Corso"
+      description="Accedi al videocorso esclusivo Mind Project. Segui le lezioni, traccia i tuoi progressi e diventa la persona che ammiri."
+      canonicalUrl="https://mind-prjct.vercel.app/academy/mind-project"
+      noIndex
+    />
+  );
+
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#050505] text-white pt-12 px-3 sm:px-4 animate-pulse">
-        <div className="max-w-6xl mx-auto mt-10 space-y-6">
-          <div className="w-48 h-6 bg-white/5 rounded" />
-          <div className="w-full h-64 bg-white/5 rounded-2xl" />
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-40 bg-white/5 rounded-2xl" />
-            ))}
+      <>
+        {pageSeo}
+        <div className="min-h-screen bg-[#050505] text-white pt-12 px-3 sm:px-4 animate-pulse">
+          <div className="max-w-6xl mx-auto mt-10 space-y-6">
+            <div className="w-48 h-6 bg-white/5 rounded" />
+            <div className="w-full h-64 bg-white/5 rounded-2xl" />
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="h-40 bg-white/5 rounded-2xl" />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 
-  if (!isAuthorized) return null;
+  if (!isAuthorized) return pageSeo;
 
   const currentLessonData = currentLesson
     ? allModulesLessons.find((l) => l.id === currentLesson)
@@ -130,10 +142,7 @@ export default function AcademyMindProject() {
 
   return (
     <>
-      <Head>
-        <title>Il Mio Video Corso — Mind Project</title>
-        <meta name="description" content="Accedi al videocorso esclusivo Mind Project. Segui le lezioni, traccia i tuoi progressi e diventa la persona che ammiri." />
-      </Head>
+      {pageSeo}
 
       <main className="min-h-screen bg-[#050505] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-28">

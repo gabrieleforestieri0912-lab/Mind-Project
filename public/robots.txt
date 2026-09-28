@@ -2,13 +2,18 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /profile
-Disallow: /settings
+Disallow: /auth/
 Disallow: /login
 Disallow: /signup
 Disallow: /forgot-password
 Disallow: /reset-password
 Disallow: /onboarding
+Disallow: /profile
+Disallow: /settings
+Disallow: /academy
+Disallow: /mind-project
+Disallow: /habit
+Disallow: /payment
 
 # GPTBot
 User-agent: GPTBot

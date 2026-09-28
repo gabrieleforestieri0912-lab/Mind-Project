@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import SEO from '@/components/SEO';
 import { useRouter } from 'next/router';
 import { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
@@ -76,30 +76,39 @@ export default function ChallengePage() {
 
   const dayLabels = ['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'];
 
+  const pageSeo = (
+    <SEO
+      title="Sfida 30 Giorni"
+      description="La Sfida 30 Giorni di Mind Project: 30 giorni per trasformare le tue abitudini e costruire una disciplina incrollabile."
+      canonicalUrl="https://mind-prjct.vercel.app/habit/challenge"
+      keywords={['sfida 30 giorni', 'abitudini', 'disciplina', 'costanza']}
+    />
+  );
+
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#050505] text-white pt-16 px-3 sm:px-4 animate-pulse">
-        <div className="max-w-2xl mx-auto mt-10 space-y-6">
-          <div className="w-48 h-6 bg-white/5 rounded" />
-          <div className="w-full h-4 bg-white/5 rounded-full" />
-          <div className="grid grid-cols-5 gap-3">
-            {Array.from({ length: 20 }).map((_, i) => (
-              <div key={i} className="aspect-square bg-white/5 rounded-xl" />
-            ))}
+      <>
+        {pageSeo}
+        <div className="min-h-screen bg-[#050505] text-white pt-16 px-3 sm:px-4 animate-pulse">
+          <div className="max-w-2xl mx-auto mt-10 space-y-6">
+            <div className="w-48 h-6 bg-white/5 rounded" />
+            <div className="w-full h-4 bg-white/5 rounded-full" />
+            <div className="grid grid-cols-5 gap-3">
+              {Array.from({ length: 20 }).map((_, i) => (
+                <div key={i} className="aspect-square bg-white/5 rounded-xl" />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 
-  if (!isAuthorized) return null;
+  if (!isAuthorized) return pageSeo;
 
   return (
     <>
-      <Head>
-        <title>Sfida 30 Giorni — Mind Project</title>
-        <meta name="description" content="La Sfida 30 Giorni di Mind Project. 30 giorni per trasformare le tue abitudini e costruire disciplina incrollabile." />
-      </Head>
+      {pageSeo}
 
       <main className="min-h-screen bg-[#050505] text-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 py-24 sm:py-28">
