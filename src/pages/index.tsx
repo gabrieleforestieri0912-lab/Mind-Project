@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ChevronRight, Target, Star, Briefcase, CheckCircle2, Shield, ArrowDown, Quote, ArrowRight, Flame, Brain, Zap, BookOpen, GraduationCap } from 'lucide-react';
+import { ChevronRight, Target, CheckCircle2, Shield, ArrowDown, Quote, ArrowRight, Flame, Brain, Zap, BookOpen, GraduationCap } from 'lucide-react';
 import React, { useState } from 'react';
 import SEO from '@/components/SEO';
 import TestimonialCarousel, { TestimonialSlide } from '@/components/TestimonialCarousel';
-import { ENTRY_PRICE, SERVICE_KEYS } from '@/lib/pricing';
 
 // Testimonianze in formato video: i file mp4 NON sono nel repository (vedi
 // .gitignore) ma vanno pubblicati su storage/CDN esterno. Le sorgenti qui sotto
@@ -39,45 +38,6 @@ const testimonialSlides: TestimonialSlide[] = [
     src: '/feedback/juan.mp4',
     poster: '/assets/testimonials/juan-poster.jpg',
     label: 'Testimonianza video di Juan',
-  },
-];
-
-const services = [
-  {
-    id: 'mind-project',
-    name: 'Mind Project',
-    tagline: 'Il Percorso Base',
-    desc: 'Rivoluziona il tuo mindset, supera le paure e raggiungi i tuoi obiettivi con il supporto della community.',
-    href: '/services/mind-project',
-    icon: Target,
-    gradient: 'from-amber-500 to-yellow-400',
-    bgGradient: 'from-amber-500/10 to-yellow-500/5',
-    borderHover: 'hover:border-amber-500/30',
-    entryPrice: ENTRY_PRICE[SERVICE_KEYS.mindProject],
-  },
-  {
-    id: 'mind-project-vip',
-    name: 'Mind Project VIP',
-    tagline: 'Esclusivo',
-    desc: 'Accesso totale, coaching 1 a 1 e supporto 24/7 per risultati straordinari senza compromessi.',
-    href: '/services/mind-project-vip',
-    icon: Star,
-    gradient: 'from-purple-500 to-fuchsia-400',
-    bgGradient: 'from-purple-500/10 to-violet-500/5',
-    borderHover: 'hover:border-purple-500/30',
-    entryPrice: ENTRY_PRICE[SERVICE_KEYS.mindProjectVip],
-  },
-  {
-    id: 'business-protocol',
-    name: 'Business Protocol',
-    tagline: 'Personal Brand',
-    desc: 'Monetizza la tua passione attraverso il Personal Brand e scappa dal sistema.',
-    href: '/services/business-protocol',
-    icon: Briefcase,
-    gradient: 'from-sky-500 to-blue-400',
-    bgGradient: 'from-sky-500/10 to-blue-500/5',
-    borderHover: 'hover:border-sky-500/30',
-    entryPrice: ENTRY_PRICE[SERVICE_KEYS.businessProtocol],
   },
 ];
 
@@ -184,8 +144,8 @@ export default function HomePage() {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Percorsi',
-        item: 'https://mind-prjct.vercel.app/services',
+        name: 'Mind Project',
+        item: 'https://mind-prjct.vercel.app/services/mind-project',
       },
     ],
   };
@@ -282,7 +242,7 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
             >
               <Link
-                href="/services"
+                href="/services/mind-project"
                 className="inline-flex items-center justify-center gap-2 bg-accent-primary text-black px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(255,180,0,0.25)] active:scale-[0.97]"
               >
                 Inizia il Tuo Percorso
@@ -314,9 +274,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Servizi */}
-        <section className="py-16 sm:py-24 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Mind Project Base - Sponsorizzata */}
+        <section className="py-16 sm:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-accent-primary/[0.03] blur-[120px] rounded-full" />
+            <div className="absolute bottom-[-20%] right-[-10%] w-[40%] h-[40%] bg-blue-600/[0.02] blur-[100px] rounded-full" />
+          </div>
+
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -324,64 +289,81 @@ export default function HomePage() {
               className="text-center mb-12 sm:mb-16"
             >
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-accent-primary mb-4 block">
-                Scegli il Tuo Percorso
+                Inizia il Tuo Viaggio
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black italic uppercase tracking-tight mb-4 pr-[0.1em]">
-                Trova il Piano <span className="gradient-text">Giusto per Te</span>
+                Mind Project <span className="gradient-text">Base</span>
               </h2>
               <p className="text-gray-500 text-sm sm:text-base max-w-xl mx-auto">
-                Ogni percorso è progettato per portarti dal punto A al punto B con un metodo testato e supporto costante.
+                Il percorso completo per trasformare la tua mentalità e raggiungere i tuoi obiettivi a un prezzo accessibile.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {services.map((service, i) => {
-                const Icon = service.icon;
-                return (
-                  <motion.div
-                    key={service.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.15, duration: 0.6 }}
-                  >
-                    <Link
-                      href={service.href}
-                      className={`group block h-full p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${service.bgGradient} border border-white/[0.06] ${service.borderHover} transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl`}
-                    >
-                      <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-5 sm:mb-6 shadow-lg`}>
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
-                      </div>
-                      <span className="text-[10px] font-black uppercase tracking-wider text-gray-500 mb-1.5 block">
-                        {service.tagline}
-                      </span>
-                      <h3 className="text-xl sm:text-2xl font-black italic uppercase tracking-tight mb-3 group-hover:text-accent-primary transition-colors">
-                        {service.name}
-                      </h3>
-                      <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-5">
-                        {service.desc}
-                      </p>
-                      <div className="mb-6 pb-5 border-b border-white/[0.06]">
-                        <span className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-500 block mb-1">
-                          A partire da
-                        </span>
-                        <div className="flex items-baseline gap-1.5">
-                          <span className="text-2xl sm:text-3xl font-black italic">
-                            {service.entryPrice.price}
-                          </span>
-                          <span className="text-xs sm:text-sm font-bold text-gray-500">
-                            {service.entryPrice.duration}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent-primary group-hover:gap-3 transition-all">
-                        Scopri di più <ChevronRight className="w-3.5 h-3.5" />
-                      </div>
-                    </Link>
-                  </motion.div>
-                );
-              })}
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="glass-card p-6 sm:p-8 md:p-10 text-center relative overflow-hidden group"
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-accent-primary/40 to-transparent" />
+
+              <div className="relative inline-block mb-6 sm:mb-8">
+                <div className="absolute inset-0 bg-accent-primary/[0.08] blur-2xl rounded-full" />
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-xl border border-accent-primary/20 p-1 group-hover:rotate-2 transition-all duration-500">
+                  <div className="w-full h-full rounded-lg overflow-hidden bg-neutral-900 border border-white/[0.06] flex items-center justify-center">
+                    <Target className="w-10 h-10 sm:w-12 sm:h-12 text-accent-primary" />
+                  </div>
+                </div>
+              </div>
+
+              <h3 className="text-xl md:text-3xl font-black mb-3 italic uppercase tracking-tighter text-white">
+                Mind Project Base
+              </h3>
+              <p className="text-gray-400 mb-6 sm:mb-8 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
+                Rivoluziona il tuo mindset, supera le paure e raggiungi i tuoi obiettivi con il supporto della community. Video corso, chiamate settimanali ed esercizi pratici.
+              </p>
+
+              <div className="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-white/[0.06]">
+                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-gray-500 block mb-2">
+                  Prezzo Promozionale
+                </span>
+                <div className="flex items-baseline justify-center gap-1.5">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black italic text-accent-primary">
+                    27€
+                  </span>
+                  <span className="text-sm sm:text-base font-bold text-gray-500">
+                    /mese
+                  </span>
+                </div>
+                <p className="text-xs text-gray-600 mt-2">
+                  Cancella in qualsiasi momento • Nessun impegno
+                </p>
+              </div>
+
+              <div className="space-y-3 mb-6 sm:mb-8 text-left max-w-md mx-auto">
+                {[
+                  'Video corso completo su mindset e disciplina',
+                  'Chiamate settimanali di gruppo',
+                  'Esercizi pratici e materiali esclusivi',
+                  'Community di supporto',
+                  'Sfida 30 Giorni inclusa',
+                ].map((feature, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-accent-primary shrink-0" />
+                    <span className="text-sm text-gray-300">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Link
+                href="/services/mind-project"
+                className="inline-flex items-center justify-center gap-2 bg-accent-primary text-black px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-black text-sm sm:text-base uppercase tracking-wider transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(255,180,0,0.25)] active:scale-[0.97]"
+              >
+                Inizia Ora a 27€/mese
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
           </div>
         </section>
 
@@ -706,10 +688,10 @@ export default function HomePage() {
                   La persona che vuoi diventare è già dentro di te. Serve solo il sistema giusto per tirarla fuori. Inizia oggi.
                 </p>
                 <Link
-                  href="/services"
+                  href="/services/mind-project"
                   className="inline-flex items-center justify-center gap-2 bg-accent-primary text-black px-8 sm:px-10 py-4 sm:py-5 rounded-2xl font-black text-sm sm:text-base uppercase tracking-wider transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(255,180,0,0.25)] active:scale-[0.97]"
                 >
-                  Scopri i Percorsi
+                  Inizia Mind Project
                   <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
