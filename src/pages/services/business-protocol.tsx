@@ -113,8 +113,8 @@ export default function BusinessProtocol() {
       />
       <main className="min-h-screen bg-[#050505] text-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[20%] left-[-10%] w-[50%] h-[50%] bg-emerald-600/[0.05] blur-[120px] rounded-full" />
-          <div className="absolute bottom-[0%] right-[-10%] w-[40%] h-[40%] bg-teal-600/[0.04] blur-[100px] rounded-full" />
+          <div className="absolute top-[20%] left-[-10%] w-[50%] h-[50%] bg-sky-600/[0.05] blur-[120px] rounded-full" />
+          <div className="absolute bottom-[0%] right-[-10%] w-[40%] h-[40%] bg-blue-600/[0.04] blur-[100px] rounded-full" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 py-16 sm:py-20 lg:py-24">
@@ -125,15 +125,15 @@ export default function BusinessProtocol() {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="w-full lg:w-1/2"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
-                <Rocket className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] text-emerald-400">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 mb-6">
+                <Rocket className="w-3.5 h-3.5 text-sky-400" />
+                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] text-sky-400">
                   Personal Brand
                 </span>
               </div>
               <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-black italic uppercase tracking-tighter leading-[0.9] mb-5">
                 Monetizza la tua <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Passione.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-300">Passione.</span>
               </h1>
               <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-8">
                 Scappa dal sistema e trasforma la tua passione in un business attraverso il tuo Personal Brand. Blueprint per recuperare il tuo investimento entro 90 giorni.
@@ -142,8 +142,8 @@ export default function BusinessProtocol() {
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {features.map((F, idx) => (
                   <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-                    <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0">
-                      <F.icon className="w-4 h-4 text-emerald-400" />
+                    <div className="w-9 h-9 rounded-lg bg-sky-500/10 flex items-center justify-center shrink-0">
+                      <F.icon className="w-4 h-4 text-sky-400" />
                     </div>
                     <span className="text-xs sm:text-sm font-bold text-gray-300">{F.text}</span>
                   </div>
@@ -198,12 +198,12 @@ export default function BusinessProtocol() {
                   transition={{ duration: 0.6, delay: idx * 0.2 }}
                   className={`relative p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border transition-all duration-300 hover:-translate-y-1 flex flex-col ${
                     plan.highlight
-                      ? 'bg-gradient-to-br from-emerald-900/30 to-teal-900/20 border-emerald-500/30 shadow-2xl shadow-emerald-500/10'
-                      : 'bg-white/[0.02] border-white/[0.06] hover:border-emerald-500/20'
+                      ? 'bg-gradient-to-br from-sky-900/30 to-blue-900/20 border-sky-500/30 shadow-2xl shadow-sky-500/10'
+                      : 'bg-white/[0.02] border-white/[0.06] hover:border-sky-500/20'
                   }`}
                 >
                   {plan.badge && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-lg shadow-emerald-500/20">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-sky-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-lg shadow-sky-500/20">
                       {plan.badge}
                     </div>
                   )}
@@ -219,7 +219,7 @@ export default function BusinessProtocol() {
                   <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-grow">
                     {pathFeatures.map((f, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className={`w-5 h-5 shrink-0 mt-0.5 ${plan.highlight ? 'text-emerald-400' : 'text-gray-600'}`} />
+                        <CheckCircle2 className={`w-5 h-5 shrink-0 mt-0.5 ${plan.highlight ? 'text-sky-400' : 'text-gray-600'}`} />
                         <span className="text-gray-300 text-sm sm:text-base">{f}</span>
                       </li>
                     ))}
@@ -227,13 +227,13 @@ export default function BusinessProtocol() {
 
                   <div className="mb-6 sm:mb-8 pt-5 border-t border-white/[0.06]">
                     <div className="flex items-center gap-2 mb-3">
-                      <Gift className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="text-[10px] font-black uppercase tracking-wider text-emerald-400">Bonus Inclusi:</span>
+                      <Gift className="w-3.5 h-3.5 text-sky-400" />
+                      <span className="text-[10px] font-black uppercase tracking-wider text-sky-400">Bonus Inclusi:</span>
                     </div>
                     <ul className="space-y-2">
                       {bonuses.map((bonus, bIdx) => (
                         <li key={bIdx} className="flex items-start gap-2 text-sm text-gray-400">
-                          <span className="text-emerald-500 mt-0.5">•</span> {bonus}
+                          <span className="text-sky-500 mt-0.5">•</span> {bonus}
                         </li>
                       ))}
                       <li className="flex items-start gap-2 text-sm text-amber-300 font-bold">
@@ -246,7 +246,7 @@ export default function BusinessProtocol() {
                     href={`/payment/checkout?service=${encodeURIComponent(plan.service)}&plan=${encodeURIComponent(plan.plan)}&price=${plan.priceValue}`}
                     className={`w-full py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 mt-auto ${
                       plan.highlight
-                        ? 'bg-emerald-500 text-black hover:bg-emerald-400 shadow-lg shadow-emerald-500/20'
+                        ? 'bg-sky-500 text-black hover:bg-sky-400 shadow-lg shadow-sky-500/20'
                         : 'bg-white/[0.05] text-white hover:bg-white/[0.1] border border-white/[0.08]'
                     }`}
                   >
