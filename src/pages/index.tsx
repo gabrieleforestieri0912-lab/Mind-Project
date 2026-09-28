@@ -24,9 +24,9 @@ const services = [
     desc: 'Accesso totale, coaching 1 a 1 e supporto 24/7 per risultati straordinari senza compromessi.',
     href: '/services/mind-project-vip',
     icon: Star,
-    gradient: 'from-amber-500 to-yellow-400',
-    bgGradient: 'from-amber-500/10 to-yellow-500/5',
-    borderHover: 'hover:border-amber-500/30',
+    gradient: 'from-purple-500 to-fuchsia-400',
+    bgGradient: 'from-purple-500/10 to-violet-500/5',
+    borderHover: 'hover:border-purple-500/30',
   },
   {
     id: 'business-protocol',

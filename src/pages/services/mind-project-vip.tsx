@@ -125,8 +125,8 @@ export default function MindProjectVip() {
       />
       <main className="min-h-screen bg-[#050505] text-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-amber-600/[0.05] blur-[120px] rounded-full" />
-          <div className="absolute bottom-[10%] left-[-5%] w-[30%] h-[30%] bg-yellow-600/[0.04] blur-[100px] rounded-full" />
+          <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/[0.05] blur-[120px] rounded-full" />
+          <div className="absolute bottom-[10%] left-[-5%] w-[30%] h-[30%] bg-violet-600/[0.04] blur-[100px] rounded-full" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 py-16 sm:py-20 lg:py-24">
@@ -137,15 +137,15 @@ export default function MindProjectVip() {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="w-full lg:w-1/2"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 mb-6">
-                <Crown className="w-3.5 h-3.5 text-amber-400" />
-                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] text-amber-400">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+                <Crown className="w-3.5 h-3.5 text-purple-400" />
+                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] text-purple-400">
                   Esclusivo
                 </span>
               </div>
               <h1 className="text-[clamp(2rem,6vw,3.5rem)] font-black italic uppercase tracking-tighter leading-[0.9] mb-5">
                 L'Esperienza <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-600">Definitiva.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-fuchsia-400 to-purple-600">Definitiva.</span>
               </h1>
               <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-8">
                 Non accontentarti della media. Accesso diretto, coaching privato e supporto d'emergenza. Questo è il percorso per chi esige risultati straordinari, senza compromessi.
@@ -180,9 +180,9 @@ export default function MindProjectVip() {
               className="lg:col-span-7"
             >
               <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative overflow-hidden mb-6 sm:mb-8">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 blur-[50px] rounded-full" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 blur-[50px] rounded-full" />
                 <div className="flex items-center gap-3 mb-6 sm:mb-8 relative z-10">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-400 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-fuchsia-400 flex items-center justify-center">
                     <Star className="w-5 h-5 text-black" />
                   </div>
                   <h2 className="text-xl sm:text-2xl font-black italic uppercase tracking-tight">Privilegi VIP</h2>
@@ -197,29 +197,29 @@ export default function MindProjectVip() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.05 + 0.2 }}
-                        className={`flex items-start gap-3 sm:gap-4 p-3 rounded-xl transition-colors ${isSpecial ? 'bg-amber-500/5 border border-amber-500/10' : ''}`}
+                        className={`flex items-start gap-3 sm:gap-4 p-3 rounded-xl transition-colors ${isSpecial ? 'bg-purple-500/5 border border-purple-500/10' : ''}`}
                       >
                         {isSpecial ? (
-                          <PhoneCall className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                          <PhoneCall className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
                         ) : (
-                          <CheckCircle2 className="w-5 h-5 text-amber-500/70 shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-5 h-5 text-purple-500/70 shrink-0 mt-0.5" />
                         )}
-                        <span className={`text-sm sm:text-base ${isSpecial ? 'text-amber-100 font-bold' : 'text-gray-300'}`}>{feature}</span>
+                        <span className={`text-sm sm:text-base ${isSpecial ? 'text-purple-100 font-bold' : 'text-gray-300'}`}>{feature}</span>
                       </motion.li>
                     );
                   })}
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-amber-900/20 to-yellow-900/10 border border-amber-500/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10">
+              <div className="bg-gradient-to-br from-purple-900/20 to-violet-900/10 border border-purple-500/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10">
                 <div className="flex items-center gap-3 mb-5 sm:mb-6">
-                  <Gift className="w-5 h-5 text-amber-400" />
-                  <h3 className="text-lg sm:text-xl font-black italic uppercase tracking-tight text-amber-400">Bonus Inclusi</h3>
+                  <Gift className="w-5 h-5 text-purple-400" />
+                  <h3 className="text-lg sm:text-xl font-black italic uppercase tracking-tight text-purple-400">Bonus Inclusi</h3>
                 </div>
                 <ul className="space-y-3">
                   {vipBonuses.map((bonus, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-gray-300">
-                      <span className="text-amber-500 mt-1 shrink-0">•</span>
+                      <span className="text-purple-500 mt-1 shrink-0">•</span>
                       <span>{bonus}</span>
                     </li>
                   ))}
@@ -237,12 +237,12 @@ export default function MindProjectVip() {
                   transition={{ duration: 0.6, delay: idx * 0.2 }}
                   className={`relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl border transition-all duration-300 hover:-translate-y-1 flex flex-col ${
                     plan.highlight
-                      ? 'bg-gradient-to-br from-amber-900/30 to-yellow-900/20 border-amber-500/30 shadow-2xl shadow-amber-500/10'
-                      : 'bg-white/[0.02] border-white/[0.06] hover:border-amber-500/20'
+                      ? 'bg-gradient-to-br from-purple-900/30 to-violet-900/20 border-purple-500/30 shadow-2xl shadow-purple-500/10'
+                      : 'bg-white/[0.02] border-white/[0.06] hover:border-purple-500/20'
                   }`}
                 >
                   {plan.badge && (
-                    <div className="absolute -top-3 right-4 sm:right-6 bg-gradient-to-r from-amber-400 to-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-lg shadow-amber-500/20">
+                    <div className="absolute -top-3 right-4 sm:right-6 bg-gradient-to-r from-purple-400 to-fuchsia-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-lg shadow-purple-500/20">
                       {plan.badge}
                     </div>
                   )}
@@ -253,7 +253,7 @@ export default function MindProjectVip() {
                   </div>
 
                   <div className="mb-5 mt-auto">
-                    <p className="text-[10px] font-black uppercase tracking-wider text-amber-500/80 flex items-center gap-2">
+                    <p className="text-[10px] font-black uppercase tracking-wider text-purple-500/80 flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5" /> + Tutti i Bonus Inclusi
                     </p>
                   </div>
@@ -262,7 +262,7 @@ export default function MindProjectVip() {
                     href={`/payment/checkout?service=${encodeURIComponent(plan.service)}&plan=${encodeURIComponent(plan.plan)}&price=${plan.priceValue}`}
                     className={`w-full py-3.5 rounded-xl font-black text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
                       plan.highlight
-                        ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-black hover:from-amber-300 hover:to-yellow-400 shadow-lg shadow-amber-500/20'
+                        ? 'bg-gradient-to-r from-purple-400 to-fuchsia-500 text-black hover:from-purple-300 hover:to-fuchsia-400 shadow-lg shadow-purple-500/20'
                         : 'bg-white/[0.05] text-white hover:bg-white/[0.1] border border-white/[0.08]'
                     }`}
                   >
