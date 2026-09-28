@@ -12,7 +12,6 @@ import {
   User,
   Settings,
   LogOut,
-  ChevronDown,
   Menu,
   X,
   Flame,
@@ -98,14 +97,9 @@ const navLinks = [
   { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
   {
     name: 'Servizi',
-      href: '/services',
-      icon: <Dumbbell className="w-4 h-4" />,
-      submenu: [
-        { name: 'Piani e Offerte', href: '/services' },
-        { name: 'Videocorso', href: '/academy/mind-project' },
-        { name: 'Chiamate Registrate', href: '/mind-project/chiamate' },
-      ],
-    },
+    href: '/services',
+    icon: <Dumbbell className="w-4 h-4" />,
+  },
     {
       name: 'Sfida 30',
       href: '/habit/challenge',
@@ -167,9 +161,6 @@ const navLinks = [
                   >
                     {link.icon}
                     {link.name}
-                    {link.submenu && (
-                      <ChevronDown className="w-3.5 h-3.5 opacity-80 group-hover:text-accent-primary group-hover:opacity-100 group-hover:rotate-180 transition-all duration-300" />
-                    )}
                     {router.pathname === link.href && (
                       <motion.div
                         layoutId="activeNav"
@@ -182,22 +173,6 @@ const navLinks = [
                       />
                     )}
                   </Link>
-
-                  {link.submenu && (
-                    <div className="absolute top-full left-0 mt-1.5 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-                      <div className="bg-[#0a0a0a]/95 backdrop-blur-2xl border border-white/[0.06] rounded-xl p-1.5 shadow-[0_10px_20px_rgba(0,0,0,0.6)]">
-                        {link.submenu.map((sub, sIdx) => (
-                          <Link
-                            key={sIdx}
-                            href={sub.href}
-                            className="flex items-center px-3 py-2 rounded-lg text-sm font-bold text-gray-500 hover:text-accent-primary hover:bg-white/[0.04] transition-all duration-200"
-                          >
-                            {sub.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
@@ -336,21 +311,6 @@ const navLinks = [
                       </span>
                       {link.name}
                     </Link>
-                    {link.submenu && (
-                      <ul className="mt-1 ml-10 space-y-1">
-                        {link.submenu.map((sub, sIdx) => (
-                          <li key={sIdx}>
-                            <Link
-                              href={sub.href}
-                              onClick={() => setShowMobileMenu(false)}
-                              className="text-gray-600 font-bold hover:text-white transition-all text-xs"
-                            >
-                              {sub.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
                   </motion.li>
                 ))}
               </ul>

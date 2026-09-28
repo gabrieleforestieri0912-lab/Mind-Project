@@ -14,10 +14,10 @@ const paths = [
     href: '/services/mind-project',
     image: '/assets/mind-project.png',
     icon: Target,
-    bgGradient: 'from-blue-500/10 to-cyan-500/5',
-    borderHover: 'hover:border-blue-500/30',
-    iconGradient: 'from-blue-500 to-cyan-400',
-    tagColor: 'text-blue-400',
+    bgGradient: 'from-amber-500/10 to-yellow-500/5',
+    borderHover: 'hover:border-amber-500/30',
+    iconGradient: 'from-amber-500 to-yellow-400',
+    tagColor: 'text-amber-400',
   },
   {
     id: 'mind-project-vip',
@@ -40,16 +40,16 @@ const paths = [
     href: '/services/business-protocol',
     image: '/assets/business-protocol.png',
     icon: Briefcase,
-    bgGradient: 'from-emerald-500/10 to-teal-500/5',
-    borderHover: 'hover:border-emerald-500/30',
-    iconGradient: 'from-emerald-500 to-teal-400',
-    tagColor: 'text-emerald-400',
+    bgGradient: 'from-sky-500/10 to-blue-500/5',
+    borderHover: 'hover:border-sky-500/30',
+    iconGradient: 'from-sky-500 to-blue-400',
+    tagColor: 'text-sky-400',
   },
   {
     id: 'hell-room',
     name: 'Hell Room',
     subtitle: 'Intensivo 90 Giorni',
-    description: 'L\'intensivo più estremo di Mind Project per costruire una mentalità dura e impenetrabile in 90 giorni. Attualmente non disponibile.',
+    description: 'L\'intensivo più estremo di Mind Project per costruire una mentalità dura e impenetrabile in 90 giorni. Le iscrizioni non sono ancora aperte.',
     href: '/services/hell-room',
     image: '/assets/hell-room.png',
     icon: Flame,
@@ -57,7 +57,7 @@ const paths = [
     borderHover: 'hover:border-red-500/30',
     iconGradient: 'from-red-500 to-orange-400',
     tagColor: 'text-red-400',
-    disabled: true,
+    paymentDisabled: true,
   },
 ];
 
@@ -128,11 +128,7 @@ export default function ServicesOverview() {
             {paths.map((path) => {
               const Icon = path.icon;
               const card = (
-                <div className={`h-full relative bg-gradient-to-br ${path.bgGradient} border border-white/[0.06] rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500 flex flex-col ${
-                  path.disabled
-                    ? 'opacity-70 border-white/[0.04]'
-                    : `${path.borderHover} hover:-translate-y-1 hover:shadow-2xl group`
-                }`}>
+                <div className={`h-full relative bg-gradient-to-br ${path.bgGradient} border border-white/[0.06] rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500 flex flex-col ${path.borderHover} hover:-translate-y-1 hover:shadow-2xl group`}>
                   <div className="relative h-56 sm:h-64 w-full overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent z-10" />
                     <Image
@@ -140,7 +136,7 @@ export default function ServicesOverview() {
                       alt={path.name}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      className={`object-cover transition-transform duration-700 ${path.disabled ? '' : 'group-hover:scale-105'}`}
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className={`absolute top-4 right-4 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br ${path.iconGradient} flex items-center justify-center shadow-lg`}>
                       <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
@@ -150,9 +146,9 @@ export default function ServicesOverview() {
                         {path.subtitle}
                       </span>
                     </div>
-                    {path.disabled && (
-                      <div className="absolute top-4 left-4 z-20 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-500/90 text-white text-[9px] font-black uppercase tracking-wider shadow-lg">
-                        <Lock className="w-3 h-3" /> Non disponibile
+                    {path.paymentDisabled && (
+                      <div className="absolute top-4 left-4 z-20 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.1] backdrop-blur-md border border-white/[0.15] text-white text-[9px] font-black uppercase tracking-wider shadow-lg">
+                        <Lock className="w-3 h-3" /> Pagamenti non disponibili
                       </div>
                     )}
                   </div>
@@ -165,7 +161,7 @@ export default function ServicesOverview() {
                       {path.description}
                     </p>
 
-                    {path.disabled ? (
+                    {path.paymentDisabled ? (
                       <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-500">
                         <Lock className="w-3.5 h-3.5" /> Iscrizioni Chiuse
                       </div>
@@ -180,7 +176,9 @@ export default function ServicesOverview() {
 
               return (
                 <motion.div key={path.id} variants={itemVariants} className="h-full">
-                  {path.disabled ? card : <Link href={path.href} className="block h-full">{card}</Link>}
+                  <Link href={path.href} className="block h-full">
+                    {card}
+                  </Link>
                 </motion.div>
               );
             })}

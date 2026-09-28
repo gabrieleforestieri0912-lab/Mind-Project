@@ -13,9 +13,9 @@ const services = [
     desc: 'Rivoluziona il tuo mindset, supera le paure e raggiungi i tuoi obiettivi con il supporto della community.',
     href: '/services/mind-project',
     icon: Target,
-    gradient: 'from-blue-500 to-cyan-400',
-    bgGradient: 'from-blue-500/10 to-cyan-500/5',
-    borderHover: 'hover:border-blue-500/30',
+    gradient: 'from-amber-500 to-yellow-400',
+    bgGradient: 'from-amber-500/10 to-yellow-500/5',
+    borderHover: 'hover:border-amber-500/30',
   },
   {
     id: 'mind-project-vip',
