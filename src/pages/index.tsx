@@ -4,7 +4,43 @@ import { motion } from 'framer-motion';
 import { ChevronRight, Target, Star, Briefcase, CheckCircle2, Shield, ArrowDown, Quote, ArrowRight, Flame, Brain, Zap, BookOpen, GraduationCap } from 'lucide-react';
 import React, { useState } from 'react';
 import SEO from '@/components/SEO';
+import TestimonialCarousel, { TestimonialSlide } from '@/components/TestimonialCarousel';
 import { ENTRY_PRICE, SERVICE_KEYS } from '@/lib/pricing';
+
+// Testimonianze in formato video: i file mp4 NON sono nel repository (vedi
+// .gitignore) ma vanno pubblicati su storage/CDN esterno. Le sorgenti qui sotto
+// puntano al percorso locale, che funziona in sviluppo; in produzione vanno
+// sostituite con gli URL definitivi.
+//
+// Attenzione: i nomi qui sono i nomi file delle testimonianze, non ancora
+// autorizzati per la pubblicazione. Va deciso il nome (o l'anonimato) con cui
+// ogni persona acconsente a comparire, e la frase che la descrive.
+const testimonialSlides: TestimonialSlide[] = [
+  {
+    id: 'alle',
+    name: 'Alle',
+    context: 'Testimonianza',
+    src: '/feedback/alle.mp4',
+    poster: '/assets/testimonials/alle-poster.jpg',
+    label: 'Testimonianza video di Alle',
+  },
+  {
+    id: 'christian',
+    name: 'Christian',
+    context: 'Testimonianza',
+    src: '/feedback/christian.mp4',
+    poster: '/assets/testimonials/christian-poster.jpg',
+    label: 'Testimonianza video di Christian',
+  },
+  {
+    id: 'juan',
+    name: 'Juan',
+    context: 'Testimonianza',
+    src: '/feedback/juan.mp4',
+    poster: '/assets/testimonials/juan-poster.jpg',
+    label: 'Testimonianza video di Juan',
+  },
+];
 
 const services = [
   {
@@ -606,6 +642,42 @@ export default function HomePage() {
                   </span>
                 ))}
               </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Testimonianze in video */}
+        <section className="py-16 sm:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[10%] left-[-10%] w-[400px] h-[400px] bg-accent-primary/[0.03] blur-[150px] rounded-full" />
+            <div className="absolute bottom-[10%] right-[-10%] w-[300px] h-[300px] bg-blue-600/[0.02] blur-[120px] rounded-full" />
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-10 sm:mb-14"
+            >
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-accent-primary mb-4 block">
+                Chi Ci Ha Già Provato
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black italic uppercase tracking-tight mb-4 pr-[0.1em]">
+                Non Serve Fidarti di <span className="gradient-text">Me</span>
+              </h2>
+              <p className="text-gray-500 text-sm sm:text-base max-w-xl mx-auto">
+                Ascolta chi è partito da dove eri tu e ha deciso di non arrendersi più.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <TestimonialCarousel slides={testimonialSlides} />
             </motion.div>
           </div>
         </section>
