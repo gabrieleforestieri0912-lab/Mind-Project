@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  async rewrites() {
+  async redirects() {
     return [
       {
-        source: "/sitemap.xml",
-        destination: "/api/sitemap",
+        // /terms was a byte-identical duplicate of /privacy-policy (only the
+        // canonical differed) and was linked from nowhere. Consolidate the
+        // signals onto the canonical page with a permanent redirect.
+        source: '/terms',
+        destination: '/privacy-policy',
+        permanent: true,
       },
     ];
   },
