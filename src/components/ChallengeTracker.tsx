@@ -55,8 +55,30 @@ export default function ChallengeTracker() {
     }
   };
 
-  const resetChallenge = () => {
-    setLogs({});
+  const resetChallenge = async () => {
+    if (syncing) return;
+    const confirmed = window.confirm(
+      'Azzerare la Sfida 30 Giorni? Tutti i giorni completati verranno cancellati e il progresso ripartirà da zero.'
+    );
+    if (!confirmed) return;
+    const empty: Record<string, boolean> = {};
+    setLogs(empty);
+    setSyncing(true);
+    setMessage('');
+    try {
+      const res = await fetch('/api/user/challenge', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ logs: empty }),
+      });
+      if (!res.ok) throw new Error('reset failed');
+      setMessage('Sfida azzerata');
+    } catch {
+      setMessage('Errore durante il reset');
+    } finally {
+      setSyncing(false);
+      setTimeout(() => setMessage(''), 3000);
+    }
   };
 
   const completedCount = Object.values(logs).filter(Boolean).length;
@@ -183,7 +205,8 @@ export default function ChallengeTracker() {
         </button>
         <button
           onClick={resetChallenge}
-          className="flex items-center justify-center gap-2 bg-white/[0.04] border border-white/[0.08] px-5 py-3 rounded-xl font-black text-xs uppercase tracking-wider text-gray-500 hover:text-red-400 hover:border-red-500/30 transition-all active:scale-95"
+          disabled={syncing}
+          className="flex items-center justify-center gap-2 bg-white/[0.04] border border-white/[0.08] px-5 py-3 rounded-xl font-black text-xs uppercase tracking-wider text-gray-500 hover:text-red-400 hover:border-red-500/30 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <RotateCcw className="w-3.5 h-3.5" />
           Resetta
