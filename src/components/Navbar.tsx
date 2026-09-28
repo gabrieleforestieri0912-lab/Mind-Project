@@ -17,6 +17,10 @@ import {
   Flame,
   HelpCircle,
   Brain,
+  Lock,
+  ChevronDown,
+  BookOpen,
+  PhoneCall,
 } from 'lucide-react';
 import { useSupabaseAuth } from '@/contexts/SupabaseAuthContext';
 
@@ -104,6 +108,7 @@ const navLinks = [
       name: 'Sfida 30',
       href: '/habit/challenge',
       icon: <Flame className="w-4 h-4" />,
+      reserved: true,
     },
     {
       name: 'FAQ',
@@ -116,6 +121,14 @@ const navLinks = [
       icon: <Mail className="w-4 h-4" />,
     },
   ];
+
+// Contenuto riservato agli utenti loggati: raggruppato in un menu a scomparsa
+// per non occupare la barra di navigazione con link che per un visitatore
+// anonimo porterebbero comunque al login (rotte protette in src/proxy.ts).
+const membersLinks = [
+  { name: 'Videocorso', href: '/academy/mind-project', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Chiamate Registrate', href: '/mind-project/chiamate', icon: <PhoneCall className="w-4 h-4" /> },
+];
 
   return (
     <>
@@ -161,6 +174,12 @@ const navLinks = [
                   >
                     {link.icon}
                     {link.name}
+                    {link.reserved && !isLoggedIn && (
+                      <Lock
+                        className="w-3 h-3 text-gray-600 group-hover:text-accent-primary transition-colors"
+                        aria-label="Area riservata agli iscritti"
+                      />
+                    )}
                     {router.pathname === link.href && (
                       <motion.div
                         layoutId="activeNav"
@@ -175,6 +194,34 @@ const navLinks = [
                   </Link>
                 </div>
               ))}
+
+              {/* Area Membri: visibile solo a chi ha effettuato l'accesso */}
+              {isLoggedIn && (
+                <div className="relative group">
+                  <button
+                    type="button"
+                    className="relative flex items-center gap-1 px-2.5 xl:px-3 py-2 rounded-lg text-[10px] xl:text-xs font-bold uppercase tracking-wider text-gray-500 hover:text-white transition-all duration-300"
+                  >
+                    <Brain className="w-4 h-4" />
+                    Area Membri
+                    <ChevronDown className="w-3.5 h-3.5 opacity-80 group-hover:text-accent-primary group-hover:opacity-100 group-hover:rotate-180 transition-all duration-300" />
+                  </button>
+                  <div className="absolute top-full right-0 mt-1.5 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+                    <div className="bg-[#0a0a0a]/95 backdrop-blur-2xl border border-white/[0.06] rounded-xl p-1.5 shadow-[0_10px_20px_rgba(0,0,0,0.6)]">
+                      {membersLinks.map((sub) => (
+                        <Link
+                          key={sub.name}
+                          href={sub.href}
+                          className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-bold text-gray-500 hover:text-accent-primary hover:bg-white/[0.04] transition-all duration-200"
+                        >
+                          {sub.icon}
+                          {sub.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="flex items-center gap-2">
@@ -310,10 +357,36 @@ const navLinks = [
                         0{idx + 1}
                       </span>
                       {link.name}
+                      {link.reserved && !isLoggedIn && (
+                        <Lock className="w-4 h-4 text-gray-600" aria-label="Area riservata agli iscritti" />
+                      )}
                     </Link>
                   </motion.li>
                 ))}
               </ul>
+
+              {/* Area Membri (mobile) */}
+              {isLoggedIn && (
+                <div className="mt-4 pt-4 border-t border-white/[0.06]">
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-accent-primary mb-3">
+                    Area Membri
+                  </p>
+                  <ul className="space-y-1.5">
+                    {membersLinks.map((sub) => (
+                      <li key={sub.name}>
+                        <Link
+                          href={sub.href}
+                          onClick={() => setShowMobileMenu(false)}
+                          className="flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-gray-400 hover:text-white transition-all py-1"
+                        >
+                          {sub.icon}
+                          {sub.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               <div className="mt-auto space-y-3">
                 <div className="h-px bg-white/[0.06]" />
