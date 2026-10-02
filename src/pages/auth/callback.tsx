@@ -28,7 +28,13 @@ export default function AuthCallback() {
       }
 
       if (data.session) {
-        router.push('/');
+        // ?next= arriva dal redirectTo di login/signup: riporta l'utente alla
+        // pagina che aveva richiesto (es. /payment/checkout?service=...&plan=...)
+        // invece di riportarlo sempre alla home.
+        const rawNext = typeof router.query.next === 'string' ? router.query.next : '/';
+        const next =
+          rawNext.startsWith('/') && !rawNext.startsWith('//') ? rawNext : '/';
+        router.push(next);
       }
     };
 

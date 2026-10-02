@@ -43,6 +43,13 @@ export default function Login() {
     return message || 'Qualcosa è andato storto. Riprova.';
   };
 
+  // Solo path interni: impedisce redirect verso domini esterni
+  // (es. callbackUrl=https://evil.com o //evil.com).
+  const sanitizeTarget = (value?: string) => {
+    const raw = value || '/';
+    return raw.startsWith('/') && !raw.startsWith('//') ? raw : '/';
+  };
+
   const handleGoogleLogin = async () => {
     setGoogleLoading(true);
     setError('');
@@ -53,7 +60,10 @@ export default function Login() {
       return;
     }
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mind-prjct.vercel.app';
-    const redirectTo = `${siteUrl}/auth/callback`;
+    // Il target viene propagato attraverso il flusso OAuth: senza ?next= l'utente
+    // finiva su / dopo Google e perdeva la pagina di provenienza (es. checkout).
+    const target = sanitizeTarget(router.query.callbackUrl as string | undefined);
+    const redirectTo = `${siteUrl}/auth/callback?next=${encodeURIComponent(target)}`;
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: { redirectTo },
@@ -89,7 +99,7 @@ export default function Login() {
       localStorage.removeItem('rememberedEmail');
     }
 
-    const target = (router.query.callbackUrl as string) || '/';
+    const target = sanitizeTarget(router.query.callbackUrl as string | undefined);
     router.push(target);
   };
 

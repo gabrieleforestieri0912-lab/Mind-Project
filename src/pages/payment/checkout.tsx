@@ -6,50 +6,97 @@ import CheckoutForm from '@/components/CheckoutForm';
 import { useRouter } from 'next/router';
 import { Shield } from 'lucide-react';
 import SEO from '@/components/SEO';
-import { motion } from 'framer-motion';
+import { useSupabaseAuth } from '@/contexts/SupabaseAuthContext';
 
 const stripePromise = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
   ? loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
   : null;
 
+// Default allineati a PRICING_CATALOG['MIND PROJECT'].Mensile: se la query
+// stringa dovesse perdersi (es. redirect dal middleware), l'importo mostrato
+// deve combaciare con quello effettivamente addebitato da
+// /api/create-payment-intent, che ricalcola il prezzo lato server.
+const DEFAULT_SERVICE = 'MIND PROJECT';
+const DEFAULT_PLAN = 'Mensile';
+const DEFAULT_PRICE = 27;
+
 export default function CheckoutPage() {
   const [clientSecret, setClientSecret] = useState('');
-  const [amount, setAmount] = useState(0);
-  const [service, setService] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [amount, setAmount] = useState(DEFAULT_PRICE);
+  const [service, setService] = useState(DEFAULT_SERVICE);
+  const [paymentError, setPaymentError] = useState('');
+  // Unica fonte di verita' sull'autenticazione: la sessione Supabase (cookie).
+  // In precedenza si legiva localStorage['isLoggedIn'], chiave che non viene
+  // mai scritta: l'utente loggato veniva sempre rimandato a /login.
+  const { session, isLoading: authLoading } = useSupabaseAuth();
   const router = useRouter();
   const stripeKeyMissing = !stripePromise;
 
+  const queryService = (router.query.service as string) || '';
+  const queryPlan = (router.query.plan as string) || '';
+  const queryPrice = router.query.price as string | undefined;
+
+  // Redirect a /login SOLO quando lo stato auth e' risolto e non c'e' sessione:
+  // evita il redirect prematuro mentre il context sta ancora caricando.
   useEffect(() => {
-    const isLoggedInCheck = localStorage.getItem('isLoggedIn') === 'true';
-    setIsLoggedIn(isLoggedInCheck);
-    if (!isLoggedInCheck) {
-      router.push('/login?callbackUrl=' + encodeURIComponent(router.asPath));
-      return;
+    if (authLoading || !router.isReady) return;
+    if (!session) {
+      router.replace('/login?callbackUrl=' + encodeURIComponent(router.asPath));
     }
+  }, [authLoading, session, router]);
 
-    if (!router.isReady) return;
+  useEffect(() => {
+    if (authLoading || !session || !router.isReady) return;
 
-    const { service: queryService, plan: queryPlan, price: queryPrice } = router.query;
-
-    const finalAmount = parseFloat(queryPrice as string) || 25;
+    const finalAmount = parseFloat(queryPrice || '') || DEFAULT_PRICE;
     setAmount(finalAmount);
-    setService((queryService as string) || 'Programma Personalizzato');
+    setService(queryService || DEFAULT_SERVICE);
+    setPaymentError('');
+    setClientSecret('');
+
+    let cancelled = false;
 
     fetch('/api/create-payment-intent', {
       method: 'POST',
+      credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        service: queryService || 'MIND PROJECT',
-        plan: queryPlan || 'Mensile',
-        metadata: { service: queryService, plan: queryPlan },
+        service: queryService || DEFAULT_SERVICE,
+        plan: queryPlan || DEFAULT_PLAN,
+        metadata: { service: queryService || DEFAULT_SERVICE, plan: queryPlan || DEFAULT_PLAN },
       }),
     })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  }, [router.isReady, router.query, router]);
+      .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+      .then(({ ok, data }) => {
+        if (cancelled) return;
+        if (!ok || !data.clientSecret) {
+          setPaymentError(
+            data?.error || 'Impossibile avviare il pagamento. Riprova tra qualche istante.'
+          );
+          return;
+        }
+        setClientSecret(data.clientSecret);
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setPaymentError('Impossibile contattare il server. Controlla la connessione e riprova.');
+        }
+      });
 
-  if (!isLoggedIn && router.isReady) {
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    authLoading,
+    session,
+    router.isReady,
+    queryService,
+    queryPlan,
+    queryPrice,
+  ]);
+
+  // Sessione verificata come assente: niente contenuti, il redirect e' in corso.
+  if (!authLoading && router.isReady && !session) {
     return null;
   }
 
@@ -101,7 +148,20 @@ export default function CheckoutPage() {
         </div>
 
         <div className="bg-white/[0.02] border border-accent-primary/10 p-4 sm:p-5 md:p-6 rounded-xl shadow-[0_0_25px_rgba(255,180,0,0.03)] backdrop-blur-sm">
-          {stripeKeyMissing ? (
+          {paymentError ? (
+            <div className="py-8 space-y-4 text-center">
+              <p className="text-red-400 text-sm font-bold uppercase tracking-widest">
+                {paymentError}
+              </p>
+              <button
+                type="button"
+                onClick={() => router.replace(router.asPath)}
+                className="px-6 py-3 bg-white/[0.05] border border-white/[0.1] text-white rounded-xl font-black text-xs uppercase tracking-widest hover:bg-white/[0.1] transition-all"
+              >
+                Riprova
+              </button>
+            </div>
+          ) : stripeKeyMissing ? (
             <p className="py-8 text-center text-sm text-red-400 font-bold uppercase tracking-widest">
               Pagamenti non disponibili: chiave Stripe non configurata
               (NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
